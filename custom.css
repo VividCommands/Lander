@@ -4585,51 +4585,64 @@ body.about-page-body .value-body h4 { font-size: 1.18rem !important; }
               0 12px 26px rgba(0, 0, 0, .2) !important;
 }
 
-/* Macro plans: clear comparisons without colored glows. */
+/* Macro plans: muted surfaces with distinct accents and depth. */
 .macro-page .macro-buy-cards { gap: 1.25rem; }
 .macro-page .macro-tier-card {
+  --plan-top: #1b2934; --plan-base: #111a23;
+  --plan-edge: #3a4e5e; --plan-accent: #c4d3df;
+  --plan-button: #283d4d; --plan-button-hover: #354f63; --plan-button-text: #eef4f8;
   min-width: 0; padding: 1.5rem; gap: 1.1rem; border-radius: 12px;
-  background: #0b223c !important; border: 1px solid #2e5d88 !important;
-  box-shadow: none !important; backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important; transition: border-color .2s ease;
+  background: linear-gradient(150deg, var(--plan-top), var(--plan-base) 68%) !important;
+  border: 1px solid var(--plan-edge) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 10px 24px rgba(0,0,0,.2) !important;
+  backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
 }
-.macro-page .macro-tier-card:hover { transform: none; border-color: #6099c9 !important; box-shadow: none !important; }
-.macro-page .macro-tier-lite { background: #0b2036 !important; }
-.macro-page .macro-tier-regular { background: #0c2947 !important; border-top-color: #69a8de !important; }
-.macro-page .macro-tier-lifetime { background: #102647 !important; border-color: #386396 !important; }
+.macro-page .macro-tier-regular {
+  --plan-top: #192d43; --plan-base: #101b2a; --plan-edge: #3b5f80;
+  --plan-accent: #a5cde9; --plan-button: #b5d3e9; --plan-button-hover: #d0e4f2; --plan-button-text: #102436;
+}
+.macro-page .macro-tier-lifetime {
+  --plan-top: #292a40; --plan-base: #191e2c; --plan-edge: #565675;
+  --plan-accent: #c5b9e5; --plan-button: #b7a8d5; --plan-button-hover: #d0c3e7; --plan-button-text: #231c32;
+}
+.macro-page .macro-tier-card:hover {
+  transform: translateY(-3px); border-color: var(--plan-accent) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.11), 0 15px 30px rgba(0,0,0,.28) !important;
+}
 .macro-page .macro-tier-badge {
-  color: #b8dcfa; background: #15395a; border-color: #326b9b;
+  color: #e2cfaf; background: #352f27; border-color: #625440;
   border-radius: 4px; letter-spacing: .5px; padding: 4px 8px;
 }
+.macro-page .macro-badge-popular { color: #c9e0f1; background: #263e52; border-color: #4c6d87; }
+.macro-page .macro-badge-lifetime { color: #e1d8f1; background: #3c354e; border-color: #6b5e85; }
 .macro-page .macro-tier-name { font-size: 1.6rem; line-height: 1.2; }
-.macro-page .macro-lite-label { color: #8fc9f5; }
+.macro-page .macro-lite-label { color: var(--plan-accent); }
 .macro-page .macro-version-label { color: #a7b6c5; white-space: nowrap; }
 .macro-page .macro-tier-subtitle { color: #a7b6c5; }
-.macro-page .macro-input-note {
-  margin: .5rem 0 0; min-height: 2.8em; color: #b9c8d6;
-  font-size: .76rem; font-weight: 600; line-height: 1.4;
-}
+.macro-page .macro-input-note { margin: .5rem 0 0; min-height: 2.8em; color: #b9c8d6; font-size: .76rem; font-weight: 600; line-height: 1.4; }
 .macro-page .macro-input-note span { display: block; color: #efd0a3; }
-.macro-page .macro-tier-image { border-color: #2e5d88; border-radius: 6px; }
+.macro-page .macro-tier-image { border-color: var(--plan-edge); border-radius: 6px; background: #080e17; }
 .macro-page .macro-tier-desc { color: #b9c8d6; }
 .macro-page .macro-tier-desc-block { gap: .85rem; }
 .macro-page .macro-features-inline { color: #cbd5df; font-size: .8rem; font-weight: 400; line-height: 1.7; }
 .macro-page .macro-features-inline strong,
 .macro-page .macro-lite-note strong { display: block; margin-bottom: .2rem; color: #edf2f6; font-weight: 600; }
-.macro-page .macro-lite-note { margin: 0; padding: .75rem 0 0; border-color: #2e5d88; color: #d7c4aa; font-size: .78rem; line-height: 1.65; }
-.macro-page .macro-tier-amount { color: #acd6fb; font-size: 2rem; }
+.macro-page .macro-lite-note { margin: 0; padding: .75rem 0 0; border-color: var(--plan-edge); color: #d7c4aa; font-size: .78rem; line-height: 1.65; }
+.macro-page .macro-tier-amount { color: var(--plan-accent); font-size: 2rem; }
 .macro-page .macro-tier-cycle,
 .macro-page .macro-tier-original del { color: #a7b6c5; }
 .macro-page .macro-buy-btn {
-  padding: .8rem 1rem; border-radius: 6px; background: #17476f;
-  color: #f2f5f8 !important; border: 1px solid #3a7cad;
-  box-shadow: none !important; letter-spacing: .3px;
+  padding: .8rem 1rem; border-radius: 6px; background: var(--plan-button);
+  color: var(--plan-button-text) !important; border: 1px solid var(--plan-accent);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1) !important; letter-spacing: .3px;
   transition: background-color .2s ease, border-color .2s ease;
 }
-.macro-page .macro-buy-regular { background: #246599; color: #f2f7fc !important; border-color: #5099cf; }
-.macro-page .macro-buy-btn:hover { background: #205d8a !important; border-color: #7bbbee !important; box-shadow: none !important; transform: none; }
-.macro-page .macro-buy-regular:hover { background: #2c76ac !important; border-color: #80c1f1 !important; }
-.macro-page .macro-buy-btn:focus-visible { outline: 2px solid #e1eaf1; outline-offset: 4px; }
+.macro-page .macro-buy-btn:hover {
+  background: var(--plan-button-hover) !important; border-color: var(--plan-accent) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.16) !important; transform: none;
+}
+.macro-page .macro-buy-btn:focus-visible { outline: 2px solid var(--plan-accent); outline-offset: 4px; }
 @media (min-width: 769px) and (max-width: 1000px) {
   .macro-page .macro-buy-section { padding-inline: 1.25rem; }
   .macro-page .macro-buy-cards { gap: .75rem; }
@@ -4640,6 +4653,10 @@ body.about-page-body .value-body h4 { font-size: 1.18rem !important; }
   .macro-page .macro-buy-inner { max-width: 480px; }
   .macro-page .macro-buy-cards { grid-template-columns: minmax(0, 1fr); }
   .macro-page .macro-input-note { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .macro-page .macro-tier-card { transition: none; }
+  .macro-page .macro-tier-card:hover { transform: none; }
 }
 
 /* Use the About page's navigation surface on every main page. */
