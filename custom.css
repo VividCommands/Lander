@@ -4,6 +4,8 @@
 
 @import url("mobile-nav.css");
 html {
+  background-color: #01010d;
+  color-scheme: dark;
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
 }
