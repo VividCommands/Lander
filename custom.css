@@ -4677,6 +4677,58 @@ body.about-page-body .value-body h4 { font-size: 1.18rem !important; }
   box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 3px 7px rgba(0,0,0,.2) !important;
 }
 
+/* Crisp text and precise outlines without changing the plan design. */
+.macro-page .macro-tier-card {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-synthesis: none;
+  border-color: color-mix(in srgb, var(--plan-edge) 80%, var(--plan-accent)) !important;
+  border-top-color: color-mix(in srgb, var(--plan-edge) 65%, var(--plan-accent)) !important;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.macro-page .macro-tier-card:hover { transform: none; }
+.macro-page .macro-tier-badge {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .1px;
+  text-transform: none;
+  padding: 5px 10px;
+  border-width: 1px;
+  border-style: solid;
+  text-shadow: none;
+}
+.macro-page .macro-tier-name {
+  font-family: inherit;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -.35px;
+}
+.macro-page .macro-tier-amount {
+  font-family: inherit;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -.6px;
+  font-variant-numeric: lining-nums tabular-nums;
+  text-shadow: none;
+}
+.macro-page .macro-tier-desc { font-size: 14px; line-height: 1.65; }
+.macro-page .macro-features-inline,
+.macro-page .macro-lite-note,
+.macro-page .macro-input-note { font-size: 13px; }
+.macro-page .macro-version-label,
+.macro-page .macro-tier-subtitle,
+.macro-page .macro-tier-cycle { font-size: 12px; line-height: 1.5; letter-spacing: .1px; }
+.macro-page .macro-buy-btn {
+  font-family: inherit;
+  font-weight: 600;
+  text-transform: none;
+  text-shadow: none;
+  letter-spacing: .1px;
+}
+
 /* Use the About page's navigation surface on every main page. */
 @media (min-width: 769px) {
   body .navbar,
