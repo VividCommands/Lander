@@ -4603,19 +4603,19 @@ body.about-page-body .value-body h4 { font-size: 1.18rem !important; }
   --plan-accent: #a5cde9; --plan-price: #f4f6fa; --plan-button: #286393; --plan-button-hover: #3478ab; --plan-button-text: #f4f8fc;
 }
 .macro-page .macro-tier-lifetime {
-  --plan-top: #2c2d2b; --plan-base: #1a201f; --plan-edge: #60665f;
-  --plan-accent: #c7c2ac; --plan-price: #f4e5c8; --plan-button: #3c566b; --plan-button-hover: #4b6b82; --plan-button-text: #f3f6f8;
+  --plan-top: #142e4d; --plan-base: #0b1729; --plan-edge: #365b83;
+  --plan-accent: #94b9df; --plan-price: #f4f7fb; --plan-button: #315981; --plan-button-hover: #3d6d99; --plan-button-text: #f3f7fc;
 }
 .macro-page .macro-tier-card:hover {
   transform: translateY(-3px); border-color: var(--plan-accent) !important;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.11), 0 15px 30px rgba(0,0,0,.28) !important;
 }
 .macro-page .macro-tier-badge {
-  color: #e2cfaf; background: #352f27; border-color: #625440;
+  color: #d7e3ec; background: #35434e; border-color: #617585;
   border-radius: 4px; letter-spacing: .5px; padding: 4px 8px;
 }
-.macro-page .macro-badge-popular { color: #c9e0f1; background: #263e52; border-color: #4c6d87; }
-.macro-page .macro-badge-lifetime { color: #e9ddc3; background: #3d3b31; border-color: #746c54; }
+.macro-page .macro-badge-popular { color: #122c40; background: #b7cedd; border-color: #d0e2ed; }
+.macro-page .macro-badge-lifetime { color: #0b2038; background: #8eaed0; border-color: #b6cde5; }
 .macro-page .macro-tier-name { font-size: 1.6rem; line-height: 1.2; }
 .macro-page .macro-lite-label { color: var(--plan-accent); }
 .macro-page .macro-version-label { color: #a7b6c5; white-space: nowrap; }
