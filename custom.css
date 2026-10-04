@@ -4679,7 +4679,8 @@ body.about-page-body .value-body h4 { font-size: 1.18rem !important; }
 
 /* Crisp text and precise outlines without changing the plan design. */
 .macro-page .macro-tier-card {
-  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
   font-synthesis: none;
   border-color: color-mix(in srgb, var(--plan-edge) 80%, var(--plan-accent)) !important;
   border-top-color: color-mix(in srgb, var(--plan-edge) 65%, var(--plan-accent)) !important;
@@ -4699,16 +4700,16 @@ body.about-page-body .value-body h4 { font-size: 1.18rem !important; }
   text-shadow: none;
 }
 .macro-page .macro-tier-name {
-  font-family: inherit;
-  font-size: 23px;
+  font-family: "Rajdhani", "Montserrat", sans-serif;
+  font-size: 26px;
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -.35px;
 }
 .macro-page .macro-tier-amount {
-  font-family: inherit;
-  font-size: 32px;
-  font-weight: 600;
+  font-family: "Rajdhani", "Montserrat", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
   line-height: 1.2;
   letter-spacing: -.6px;
   font-variant-numeric: lining-nums tabular-nums;
@@ -4727,6 +4728,38 @@ body.about-page-body .value-body h4 { font-size: 1.18rem !important; }
   text-transform: none;
   text-shadow: none;
   letter-spacing: .1px;
+}
+
+/* Keep the feature copy light and the previous price legible. */
+.macro-page .macro-tier-desc,
+.macro-page .macro-features-inline,
+.macro-page .macro-lite-note,
+.macro-page .macro-input-note,
+.macro-page .macro-features-inline strong,
+.macro-page .macro-lite-note strong { font-weight: 400; }
+.macro-page .macro-tier-original del {
+  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  font-size: 14px; font-weight: 400; line-height: 1.5;
+  color: #b6c7d4;
+  text-decoration-thickness: 1px;
+  text-decoration-color: #b6c7d4;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: .2px;
+}
+.macro-page .macro-tier-regular .macro-tier-name { color: #b8d1e2; }
+.macro-page .macro-tier-lifetime .macro-tier-name { color: #94b9df; }
+.macro-page .macro-lite-label { color: #eea058; }
+.macro-page .macro-plan-separator { padding: 3rem 2rem 0; }
+.macro-page .macro-plan-separator-inner {
+  max-width: 820px; min-height: 136px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center;
+}
+.macro-page .macro-plan-separator hr {
+  width: min(320px, 65%); margin: 0; border: 0;
+  border-top: 1px solid rgba(160, 190, 215, .22);
+}
+@media (max-width: 600px) {
+  .macro-page .macro-plan-separator-inner { min-height: 216px; }
 }
 
 /* Use the About page's navigation surface on every main page. */
