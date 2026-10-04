@@ -2705,18 +2705,6 @@ body.about-page-body .about-hero-wrap {
 
 body.about-page-body .about-hero-wrap::before { display: none !important; }
 
-@media (min-width: 769px) {
-  body.about-page-body .navbar,
-  body.about-page-body .navbar:not(.scrolled),
-  body.about-page-body .navbar.scrolled {
-    background: #050d18 !important;
-    background-image: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    border-bottom: 1px solid rgba(74, 202, 255, 0.14) !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24) !important;
-  }
-}
 
 /* A single, dedicated visual identity for the Ultimate Bundle. */
 .bundle-artwork-wrap {
@@ -4593,4 +4581,73 @@ body.about-page-body .value-body h4 { font-size: 1.18rem !important; }
   border-color: #68b6d3 !important;
   box-shadow: inset 0 1px rgba(212, 242, 250, .11),
               0 12px 26px rgba(0, 0, 0, .2) !important;
+}
+
+/* Macro plans: clear comparisons without colored glows. */
+.macro-page .macro-buy-cards { gap: 1.25rem; }
+.macro-page .macro-tier-card {
+  min-width: 0; padding: 1.5rem; gap: 1.1rem; border-radius: 12px;
+  background: #0c1622 !important; border: 1px solid #334150 !important;
+  box-shadow: none !important; backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important; transition: border-color .2s ease;
+}
+.macro-page .macro-tier-card:hover { transform: none; border-color: #64788b !important; box-shadow: none !important; }
+.macro-page .macro-tier-regular { border-top-color: #7c9bb1 !important; }
+.macro-page .macro-tier-badge {
+  color: #cbd5df; background: #172331; border-color: #394958;
+  border-radius: 4px; letter-spacing: .5px; padding: 4px 8px;
+}
+.macro-page .macro-tier-name { font-size: 1.6rem; line-height: 1.2; }
+.macro-page .macro-lite-label { color: #cbd5df; }
+.macro-page .macro-version-label { color: #a7b6c5; white-space: nowrap; }
+.macro-page .macro-tier-subtitle { color: #a7b6c5; }
+.macro-page .macro-input-note {
+  margin: .5rem 0 0; min-height: 2.8em; color: #b9c8d6;
+  font-size: .76rem; font-weight: 600; line-height: 1.4;
+}
+.macro-page .macro-input-note span { display: block; color: #efd0a3; }
+.macro-page .macro-tier-image { border-color: #334150; border-radius: 6px; }
+.macro-page .macro-tier-desc { color: #b9c8d6; }
+.macro-page .macro-tier-desc-block { gap: .85rem; }
+.macro-page .macro-features-inline { color: #cbd5df; font-size: .8rem; font-weight: 400; line-height: 1.7; }
+.macro-page .macro-features-inline strong,
+.macro-page .macro-lite-note strong { display: block; margin-bottom: .2rem; color: #edf2f6; font-weight: 600; }
+.macro-page .macro-lite-note { margin: 0; padding: .75rem 0 0; border-color: #334150; color: #d7c4aa; font-size: .78rem; line-height: 1.65; }
+.macro-page .macro-tier-amount { color: #f2f5f8; font-size: 2rem; }
+.macro-page .macro-tier-cycle,
+.macro-page .macro-tier-original del { color: #a7b6c5; }
+.macro-page .macro-buy-btn {
+  padding: .8rem 1rem; border-radius: 6px; background: #25394b;
+  color: #f2f5f8 !important; border: 1px solid #526b80;
+  box-shadow: none !important; letter-spacing: .3px;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+.macro-page .macro-buy-regular { background: #c6d7e4; color: #0c1622 !important; border-color: #c6d7e4; }
+.macro-page .macro-buy-btn:hover { background: #344d63 !important; border-color: #8ba8be !important; box-shadow: none !important; transform: none; }
+.macro-page .macro-buy-regular:hover { background: #e1eaf1 !important; border-color: #e1eaf1 !important; }
+.macro-page .macro-buy-btn:focus-visible { outline: 2px solid #e1eaf1; outline-offset: 4px; }
+@media (min-width: 769px) and (max-width: 1000px) {
+  .macro-page .macro-buy-section { padding-inline: 1.25rem; }
+  .macro-page .macro-buy-cards { gap: .75rem; }
+  .macro-page .macro-tier-card { padding: 1.1rem; }
+}
+@media (max-width: 768px) {
+  .macro-page .macro-buy-section { padding: 2rem 1rem; }
+  .macro-page .macro-buy-inner { max-width: 480px; }
+  .macro-page .macro-buy-cards { grid-template-columns: minmax(0, 1fr); }
+  .macro-page .macro-input-note { min-height: 0; }
+}
+
+/* Use the About page's navigation surface on every main page. */
+@media (min-width: 769px) {
+  body .navbar,
+  body .navbar:not(.scrolled),
+  body .navbar.scrolled {
+    background: #050d18 !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: 1px solid rgba(74, 202, 255, .14) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .24) !important;
+  }
 }
