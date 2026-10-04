@@ -4589,18 +4589,20 @@ body.about-page-body .value-body h4 { font-size: 1.18rem !important; }
 .macro-page .macro-buy-cards { gap: 1.25rem; }
 .macro-page .macro-tier-card {
   min-width: 0; padding: 1.5rem; gap: 1.1rem; border-radius: 12px;
-  background: #0c1622 !important; border: 1px solid #334150 !important;
+  background: #0b223c !important; border: 1px solid #2e5d88 !important;
   box-shadow: none !important; backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important; transition: border-color .2s ease;
 }
-.macro-page .macro-tier-card:hover { transform: none; border-color: #64788b !important; box-shadow: none !important; }
-.macro-page .macro-tier-regular { border-top-color: #7c9bb1 !important; }
+.macro-page .macro-tier-card:hover { transform: none; border-color: #6099c9 !important; box-shadow: none !important; }
+.macro-page .macro-tier-lite { background: #0b2036 !important; }
+.macro-page .macro-tier-regular { background: #0c2947 !important; border-top-color: #69a8de !important; }
+.macro-page .macro-tier-lifetime { background: #102647 !important; border-color: #386396 !important; }
 .macro-page .macro-tier-badge {
-  color: #cbd5df; background: #172331; border-color: #394958;
+  color: #b8dcfa; background: #15395a; border-color: #326b9b;
   border-radius: 4px; letter-spacing: .5px; padding: 4px 8px;
 }
 .macro-page .macro-tier-name { font-size: 1.6rem; line-height: 1.2; }
-.macro-page .macro-lite-label { color: #cbd5df; }
+.macro-page .macro-lite-label { color: #8fc9f5; }
 .macro-page .macro-version-label { color: #a7b6c5; white-space: nowrap; }
 .macro-page .macro-tier-subtitle { color: #a7b6c5; }
 .macro-page .macro-input-note {
@@ -4608,25 +4610,25 @@ body.about-page-body .value-body h4 { font-size: 1.18rem !important; }
   font-size: .76rem; font-weight: 600; line-height: 1.4;
 }
 .macro-page .macro-input-note span { display: block; color: #efd0a3; }
-.macro-page .macro-tier-image { border-color: #334150; border-radius: 6px; }
+.macro-page .macro-tier-image { border-color: #2e5d88; border-radius: 6px; }
 .macro-page .macro-tier-desc { color: #b9c8d6; }
 .macro-page .macro-tier-desc-block { gap: .85rem; }
 .macro-page .macro-features-inline { color: #cbd5df; font-size: .8rem; font-weight: 400; line-height: 1.7; }
 .macro-page .macro-features-inline strong,
 .macro-page .macro-lite-note strong { display: block; margin-bottom: .2rem; color: #edf2f6; font-weight: 600; }
-.macro-page .macro-lite-note { margin: 0; padding: .75rem 0 0; border-color: #334150; color: #d7c4aa; font-size: .78rem; line-height: 1.65; }
-.macro-page .macro-tier-amount { color: #f2f5f8; font-size: 2rem; }
+.macro-page .macro-lite-note { margin: 0; padding: .75rem 0 0; border-color: #2e5d88; color: #d7c4aa; font-size: .78rem; line-height: 1.65; }
+.macro-page .macro-tier-amount { color: #acd6fb; font-size: 2rem; }
 .macro-page .macro-tier-cycle,
 .macro-page .macro-tier-original del { color: #a7b6c5; }
 .macro-page .macro-buy-btn {
-  padding: .8rem 1rem; border-radius: 6px; background: #25394b;
-  color: #f2f5f8 !important; border: 1px solid #526b80;
+  padding: .8rem 1rem; border-radius: 6px; background: #17476f;
+  color: #f2f5f8 !important; border: 1px solid #3a7cad;
   box-shadow: none !important; letter-spacing: .3px;
   transition: background-color .2s ease, border-color .2s ease;
 }
-.macro-page .macro-buy-regular { background: #c6d7e4; color: #0c1622 !important; border-color: #c6d7e4; }
-.macro-page .macro-buy-btn:hover { background: #344d63 !important; border-color: #8ba8be !important; box-shadow: none !important; transform: none; }
-.macro-page .macro-buy-regular:hover { background: #e1eaf1 !important; border-color: #e1eaf1 !important; }
+.macro-page .macro-buy-regular { background: #246599; color: #f2f7fc !important; border-color: #5099cf; }
+.macro-page .macro-buy-btn:hover { background: #205d8a !important; border-color: #7bbbee !important; box-shadow: none !important; transform: none; }
+.macro-page .macro-buy-regular:hover { background: #2c76ac !important; border-color: #80c1f1 !important; }
 .macro-page .macro-buy-btn:focus-visible { outline: 2px solid #e1eaf1; outline-offset: 4px; }
 @media (min-width: 769px) and (max-width: 1000px) {
   .macro-page .macro-buy-section { padding-inline: 1.25rem; }
