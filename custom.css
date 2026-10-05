@@ -4762,47 +4762,53 @@ body.about-page-body .value-body h4 { font-size: 1.18rem !important; }
   .macro-page .macro-plan-separator-inner { min-height: 216px; }
 }
 
-/* Each full plan explains a different access and update choice. */
+/* Quiet full-plan surfaces, independent text tones, and simple descriptions. */
 .macro-page .macro-tier-regular {
-  --plan-top: #153b47; --plan-base: #0c242f; --plan-edge: #3b6575;
-  --plan-accent: #8dc8da; --plan-button: #236779; --plan-button-hover: #2c7b8d; --plan-button-edge: #477b89;
+  --plan-top: #233442; --plan-base: #16232f; --plan-edge: #3d4b57;
+  --plan-accent: #98c7e8; --plan-button: #cfdae2; --plan-button-hover: #e0e8ee;
+  --plan-button-edge: #cfdae2; --plan-button-text: #172736;
 }
 .macro-page .macro-tier-lifetime {
-  --plan-top: #182f54; --plan-base: #0b1932; --plan-edge: #415f89;
-  --plan-accent: #a2bff1; --plan-button: #2c568d; --plan-button-hover: #36679f; --plan-button-edge: #5278a6;
+  --plan-top: #132947; --plan-base: #0b192e; --plan-edge: #34445b;
+  --plan-accent: #adc7f3; --plan-button: #31588b; --plan-button-hover: #3a659b;
+  --plan-button-edge: #486991; --plan-button-text: #f4f6fa;
 }
-.macro-page .macro-tier-regular .macro-tier-name { color: #78cee5; }
-.macro-page .macro-tier-lifetime .macro-tier-name { color: #a2bff1; }
+.macro-page .macro-tier-regular,
+.macro-page .macro-tier-lifetime {
+  border-color: var(--plan-edge) !important;
+  border-top-color: var(--plan-edge) !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,.2) !important;
+}
+.macro-page .macro-tier-regular:hover,
+.macro-page .macro-tier-lifetime:hover {
+  border-color: #526172 !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,.2) !important;
+}
+.macro-page .macro-tier-regular .macro-tier-name { color: #98c7e8; }
+.macro-page .macro-tier-lifetime .macro-tier-name { color: #adc7f3; }
 .macro-page .macro-tier-regular .macro-tier-subtitle,
-.macro-page .macro-tier-lifetime .macro-tier-subtitle { color: #c0d3df; }
+.macro-page .macro-tier-lifetime .macro-tier-subtitle { color: #c8cdd4; }
+.macro-page .macro-tier-regular .macro-input-note,
+.macro-page .macro-tier-lifetime .macro-input-note,
+.macro-page .macro-tier-regular .macro-version-label,
+.macro-page .macro-tier-lifetime .macro-version-label { color: #aeb7c3; }
 .macro-page .macro-tier-regular .macro-tier-amount,
-.macro-page .macro-tier-lifetime .macro-tier-amount { color: #f4f7fb; }
-.macro-page .macro-badge-popular { background: #b9dce5; color: #12323f; border-color: #d4e9ee; }
-.macro-page .macro-badge-lifetime { background: #9ebce3; color: #142b49; border-color: #bed3ed; }
-.macro-page .macro-plan-details { gap: 1.1rem; }
-.macro-page .macro-plan-details h3 {
-  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
-  font-size: 13px; line-height: 1.5; font-weight: 600;
-  letter-spacing: .1px; margin: 0 0 8px; color: #e3edf4;
+.macro-page .macro-tier-lifetime .macro-tier-amount { color: #f0ede7; }
+.macro-page .macro-tier-regular .macro-tier-image,
+.macro-page .macro-tier-lifetime .macro-tier-image { border-color: #2c3848; }
+.macro-page .macro-badge-popular {
+  background: #c6d6bd; color: #253322; border-color: #c6d6bd;
 }
-.macro-page .macro-plan-feature-list {
-  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-  gap: 6px 10px; padding: 0; margin: 0; list-style: none;
-  color: #bdd0dc; font-size: 13px; line-height: 1.6; font-weight: 400;
+.macro-page .macro-badge-lifetime {
+  background: #253c5b; color: #d2dbe7; border-color: #43546d;
 }
-.macro-page .macro-plan-feature-list li { padding: 0; margin: 0; }
-.macro-page .macro-plan-terms { margin: 0; border-top: 1px solid rgba(167,204,221,.19); }
-.macro-page .macro-plan-terms div {
-  display: grid; grid-template-columns: 62px minmax(0,1fr); gap: 10px;
-  padding: 10px 0; border-bottom: 1px solid rgba(167,204,221,.13);
+.macro-page .macro-full-description { gap: .75rem; }
+.macro-page .macro-full-description .macro-tier-desc {
+  color: #d2d5d9; font-size: 13px; line-height: 1.75; font-weight: 400;
 }
-.macro-page .macro-plan-terms dt { color: #8dc8da; font-size: 13px; font-weight: 600; line-height: 1.65; }
-.macro-page .macro-plan-terms dd { margin: 0; color: #bdd0dc; font-size: 13px; font-weight: 400; line-height: 1.65; }
-.macro-page .macro-lifetime-benefits { padding: 0; margin: 0; list-style: none; }
-.macro-page .macro-lifetime-benefits li { padding: 10px 0; margin: 0; border-bottom: 1px solid rgba(160,189,225,.16); }
-.macro-page .macro-lifetime-benefits li:first-child { padding-top: 0; }
-.macro-page .macro-lifetime-benefits h3 { margin: 0 0 3px; color: #b9cfee; font-weight: 500; font-family: "Rajdhani", sans-serif; font-size: 16px; line-height: 1.35; }
-.macro-page .macro-lifetime-benefits p { margin: 0; color: #bbc9dc; font-size: 13px; font-weight: 400; line-height: 1.65; }
+.macro-page .macro-plan-summary {
+  margin: 0; color: #b6bec9; font-size: 13px; line-height: 1.75; font-weight: 400;
+}
 .macro-page .macro-tier-regular .macro-buy-btn,
 .macro-page .macro-tier-lifetime .macro-buy-btn {
   background: var(--plan-button);
