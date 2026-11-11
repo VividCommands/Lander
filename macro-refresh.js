@@ -99,6 +99,8 @@
       checkout.href = url.href;
       checkout.hidden = false;
       checkoutExpiry = setTimeout(() => { resetResult(); status.textContent = 'Please verify your key again to continue.'; }, 300000);
+      status.textContent = 'Opening checkout…';
+      window.location.assign(url.href);
     } catch (e) {
       if (request === controller && dialog.open && (e.name !== 'AbortError' || controller.signal.reason === 'timeout')) error('Unable to check your key right now. Please try again.');
     } finally {
