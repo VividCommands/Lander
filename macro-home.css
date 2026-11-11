@@ -1,0 +1,6 @@
+.orbit-edition{position:absolute;z-index:4;bottom:10px;right:12px;min-width:60px;padding:6px 9px;border:1px solid #6b8eaf;border-radius:4px;background:#101e2ef0;color:#d1e1f2;font:600 12px/1.4 'Montserrat',sans-serif;text-align:center}
+.orbit-edition.is-pro{border-color:#b38b58;color:#f2ca94;background:#27241ff0}
+.orbit-pause{display:block;min-width:60px;min-height:44px;margin:10px auto 0;padding:8px 12px;border:1px solid #3e536b;border-radius:5px;background:#101e30;color:#d6e2ed;font:400 12px/1.5 'Montserrat',sans-serif;cursor:pointer}
+.orbit-pause:hover{background:#243950}
+.orbit-pause:focus-visible{outline:2px solid #c6d9eb;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){.product-orbit *{transition:none!important;animation:none!important}}

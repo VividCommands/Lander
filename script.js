@@ -77,6 +77,7 @@ if (menuToggle && navLinks) {
 
 /* Particle background */
 (function initParticles() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || document.body.classList.contains('pingr-page')) return;
   const canvas = document.createElement('canvas');
   canvas.id = 'particle-canvas';
   canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;touch-action:none;z-index:0;';
@@ -134,6 +135,9 @@ if (orbit) {
   const controls = orbit.querySelector('.orbit-controls');
   let activeProduct = 0;
   let orbitTimer;
+  let shotTimer;
+  let orbitPaused = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const pauseOrbit = orbit.querySelector('.orbit-pause');
 
   products.forEach((product, index) => {
     product.dataset.shot = '0';
@@ -167,19 +171,30 @@ if (orbit) {
       const next = (Number(product.dataset.shot) + 1) % shots.length;
       shots.forEach((shot, i) => shot.classList.toggle('is-current', i === next));
       product.dataset.shot = String(next);
+      const edition = product.querySelector('.orbit-edition');
+      if (edition) { edition.textContent = shots[next].dataset.tier; edition.classList.toggle('is-pro', shots[next].dataset.tier === 'Pro'); }
     });
   }
 
   function restartOrbit() {
     clearInterval(orbitTimer);
+    clearInterval(shotTimer);
+    if (pauseOrbit) { pauseOrbit.textContent = orbitPaused ? 'Play' : 'Pause'; pauseOrbit.setAttribute('aria-label', orbitPaused ? 'Play product carousel' : 'Pause product carousel'); }
+    if (orbitPaused || document.hidden) return;
     orbitTimer = setInterval(() => rotateProducts(activeProduct + 1, 1), 7000);
+    shotTimer = setInterval(advanceShots, 3500);
   }
 
   orbit.querySelector('.orbit-prev').addEventListener('click', () => { rotateProducts(activeProduct - 1, -1); restartOrbit(); });
   orbit.querySelector('.orbit-next').addEventListener('click', () => { rotateProducts(activeProduct + 1, 1); restartOrbit(); });
-  orbit.addEventListener('mouseenter', () => clearInterval(orbitTimer));
+  const stopOrbit = () => { clearInterval(orbitTimer); clearInterval(shotTimer); };
+  orbit.addEventListener('mouseenter', stopOrbit);
+  orbit.addEventListener('focusin', stopOrbit);
+  orbit.addEventListener('focusout', event => { if (!orbit.contains(event.relatedTarget)) restartOrbit(); });
+  document.addEventListener('visibilitychange', restartOrbit);
+  if (pauseOrbit) pauseOrbit.addEventListener('click', () => { orbitPaused = !orbitPaused; restartOrbit(); });
   orbit.addEventListener('mouseleave', restartOrbit);
-  setInterval(advanceShots, 2600);
+
   restartOrbit();
 }
 

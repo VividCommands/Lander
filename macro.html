@@ -3,7 +3,7 @@
 <head>
 <style id="dark-theme-base">html{background:#01010d;color-scheme:dark}body{background-color:#01010d;color:#e6f2ff}</style>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Gaming Macro Software for Keyboard and Controller | Macro.io</title>
 <meta name="description" content="Create, time, save, and run custom gaming macros for keyboard and controller with Macro.io for Windows." />
 <meta property="og:type" content="website" />
@@ -11,13 +11,13 @@
 <meta property="og:title" content="Gaming Macro Software for Keyboard and Controller | Macro.io" />
 <meta property="og:description" content="Create, time, save, and run custom gaming macros for keyboard and controller with Macro.io for Windows." />
 <meta property="og:url" content="https://lonware.com/macro.html" />
-<meta property="og:image" content="https://lonware.com/img/macro-lifetime-screenshot-hq.png" />
+<meta property="og:image" content="https://lonware.com/img/macro/pro-drag.webp" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Gaming Macro Software for Keyboard and Controller | Macro.io" />
 <meta name="twitter:description" content="Create, time, save, and run custom gaming macros for keyboard and controller with Macro.io for Windows." />
-<meta name="twitter:image" content="https://lonware.com/img/macro-lifetime-screenshot-hq.png" />
+<meta name="twitter:image" content="https://lonware.com/img/macro/pro-drag.webp" />
 <link rel="canonical" href="https://lonware.com/macro.html" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Macro.io","description":"Custom gaming macro software for keyboard and controller on Windows.","image":"https://lonware.com/img/macro-lifetime-screenshot-hq.png","brand":{"@type":"Brand","name":"Lonware"},"offers":{"@type":"Offer","url":"https://lonware.com/macro.html","priceCurrency":"USD","price":"14.99","availability":"https://schema.org/InStock"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Macro.io","description":"Custom gaming macro software for keyboard and controller on Windows.","image":"https://lonware.com/img/macro/pro-drag.webp","brand":{"@type":"Brand","name":"Lonware"},"offers":{"@type":"Offer","url":"https://lonware.com/macro.html","priceCurrency":"USD","price":"15.00","availability":"https://schema.org/InStock"}}</script>
 <link rel="stylesheet" href="styles.css?v=dark24" />
 <link rel="stylesheet" href="custom.css?v=macro-plans33" />
 <link rel="icon" href="favicon.png" type="image/png">
@@ -26,6 +26,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="macro-refresh.css?v=1">
+<script src="macro-refresh.js?v=1" defer></script>
 </head>
 <body class="macro-page">
 <div class="announcement-bar">
@@ -42,105 +44,68 @@ Use code <strong>UPD!</strong> for 12% off
 <a href="https://discord.gg/KVVjrawxE5" class="nav-discord-btn" target="_blank" rel="noopener" aria-label="Join our Discord"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>Discord</a>
 </header>
 
-<section class="hero" style="padding-top:8rem;">
-<h1 class="hero-title">Macro.io</h1>
-<p class="hero-subtitle" style="font-size:0.9rem; margin-top:0.25rem;">Macros for keyboard, mouse, and controller</p>
-<p class="hero-subtitle">Choose the version that fits your setup.</p>
-
-<div class="macro-slider" style="margin-top:2rem;">
-<div class="macro-slide active">
-<img src="img/macro-lifetime-screenshot-hq.png" alt="Macro.io Auto Build Settings" class="product-image macro-slide-img" loading="eager" decoding="async" fetchpriority="high">
+<main>
+<section class="macro-intro" aria-labelledby="macro-title">
+<h1 id="macro-title">Macro.io</h1>
+<p>Macros for keyboard, mouse, and controller.</p>
+<div class="macro-gallery" role="region" aria-roledescription="carousel" aria-label="Macro.io screenshots">
+<div class="macro-frames"><figure class="macro-frame is-current" data-tier="Standard" data-caption="Drag Edit">
+<img src="img/macro/standard-drag.webp" alt="Macro.io Standard: Drag Edit" width="440" height="320" loading="eager" decoding="async" fetchpriority="high">
+</figure>
+<figure class="macro-frame" data-tier="Pro" data-caption="Advanced Drag Edit" hidden>
+<img src="img/macro/pro-drag.webp" alt="Macro.io Pro: Advanced Drag Edit" width="440" height="320" loading="lazy" decoding="async">
+</figure>
+<figure class="macro-frame" data-tier="Standard" data-caption="Double Edit" hidden>
+<img src="img/macro/standard-double.webp" alt="Macro.io Standard: Double Edit" width="440" height="320" loading="lazy" decoding="async">
+</figure>
+<figure class="macro-frame" data-tier="Pro" data-caption="Controller settings" hidden>
+<img src="img/macro/pro-controller.webp" alt="Macro.io Pro: Controller settings" width="440" height="320" loading="lazy" decoding="async">
+</figure>
+<figure class="macro-frame" data-tier="Pro" data-caption="Turbo Auto Build" hidden>
+<img src="img/macro/pro-build.webp" alt="Macro.io Pro: Turbo Auto Build" width="440" height="320" loading="lazy" decoding="async">
+</figure>
 </div>
-<div class="macro-slide">
-<img src="img/macro-controller-screenshot-hq.png" alt="Macro.io Controller Settings" class="product-image macro-slide-img" loading="lazy" decoding="async">
-</div>
-<div class="macro-slide">
-<img src="img/macro-spam-screenshot-hq.png" alt="Macro.io Spam Edit Settings" class="product-image macro-slide-img" loading="lazy" decoding="async">
-</div>
-<div class="macro-slide">
-<img src="img/macro-lite-screenshot-hq.png" alt="Macro LITE - One Day Version" class="product-image macro-slide-img" loading="lazy" decoding="async">
-</div>
-</div>
-</section>
-
-<section class="macro-buy-section">
-<div class="macro-buy-inner">
-<div class="macro-buy-cards">
-
-<!-- Macro LITE (One Day) -->
-<div class="macro-tier-card macro-tier-lite">
-<div class="macro-tier-header">
-<div class="macro-tier-badge">Limited features</div>
-<div class="macro-tier-name">Macro <span class="macro-lite-label">LITE</span></div>
-<div class="macro-tier-subtitle">24-hour access</div>
-<p class="macro-input-note">Keyboard &amp; mouse only <span>No controller support</span></p>
-</div>
-<div class="macro-tier-image">
-<img src="img/macro-lite-screenshot-hq.png" alt="Macro LITE screenshot" loading="lazy" decoding="async">
-</div>
-<div class="macro-tier-desc-block">
-<p class="macro-tier-desc">Use Drag Edit, Auto Pick Up, and Extras for 24 hours. Lite includes fewer features than the full version.</p>
-<p class="macro-features-inline"><strong>Includes</strong>Drag Edit, Auto Pick Up, Extras</p>
-<p class="macro-lite-note"><strong>Not included</strong>Controller support, Spam Edit, Sprint, Pull Out, Pre Fire, and Wall Retake.</p>
-</div>
-<div class="macro-tier-price">
-<span class="macro-tier-amount">$2.99</span>
-<span class="macro-tier-cycle">One Day</span>
-</div>
-<a href="https://payhip.com/buy?link=uIdob" class="macro-buy-btn macro-buy-lite" target="_blank" rel="noopener">Get Macro LITE</a>
-</div>
-
-<!-- Macro.io Regular -->
-<div class="macro-tier-card macro-tier-regular">
-<div class="macro-tier-header">
-<div class="macro-tier-badge macro-badge-popular">Most popular</div>
-<div class="macro-tier-name">Macro.io <span class="macro-version-label">v1.50B+</span></div>
-<div class="macro-tier-subtitle">Full access for 3 weeks</div>
-<p class="macro-input-note">Keyboard, mouse &amp; controller</p>
-</div>
-<div class="macro-tier-image">
-<img src="img/macro-lifetime-screenshot-hq.png" alt="Macro.io screenshot" loading="lazy" decoding="async">
-</div>
-<div class="macro-tier-desc-block macro-full-description">
-<p class="macro-tier-desc">Full access to Drag Edit, Spam Edit, Auto Pick Up, Sprint, Pull Out, Pre Fire, Wall Retake, and Extras.</p>
-<p class="macro-plan-summary">Works with keyboard, mouse, and controller. Includes standard updates during your 3 weeks of access.</p>
-</div>
-
-<div class="macro-tier-price">
-<span class="macro-tier-original"><del>$29.99</del></span>
-<span class="macro-tier-amount">$14.99</span>
-<span class="macro-tier-cycle">every 3 weeks</span>
-</div>
-<a href="https://payhip.com/buy?link=xKhTB" class="macro-buy-btn macro-buy-regular" target="_blank" rel="noopener">Buy Now</a>
-</div>
-
-<!-- Macro.io Lifetime -->
-<div class="macro-tier-card macro-tier-lifetime">
-<div class="macro-tier-header">
-<div class="macro-tier-badge macro-badge-lifetime">Lifetime</div>
-<div class="macro-tier-name">Macro.io <span class="macro-version-label">v1.50B+</span></div>
-<div class="macro-tier-subtitle">Permanent access</div>
-<p class="macro-input-note">Keyboard, mouse &amp; controller</p>
-</div>
-<div class="macro-tier-image">
-<img src="img/macro-controller-screenshot-hq.png" alt="Macro.io Lifetime screenshot" loading="lazy" decoding="async">
-</div>
-<div class="macro-tier-desc-block macro-full-description">
-<p class="macro-tier-desc">All Macro.io features for keyboard, mouse, and controller, with permanent access from one payment.</p>
-<p class="macro-plan-summary">Lifetime users get significantly more updates and receive them much earlier than standard users. Priority support is included.</p>
-</div>
-
-<div class="macro-tier-price">
-<span class="macro-tier-amount">Lifetime</span>
-<span class="macro-tier-cycle">one-time payment</span>
-</div>
-<a href="https://payhip.com/buy?link=NZ9tG" class="macro-buy-btn macro-buy-lifetime" target="_blank" rel="noopener">Get Lifetime</a>
-</div>
-
+<div class="macro-gallery-bar">
+<div class="macro-image-caption"><span id="macro-edition" class="macro-edition">Standard</span><span id="macro-caption">Drag Edit</span></div>
+<div class="macro-gallery-controls"><button type="button" data-gallery="prev" aria-label="Previous screenshot">&#8592;</button><button type="button" data-gallery="pause" aria-label="Pause screenshots">Pause</button><button type="button" data-gallery="next" aria-label="Next screenshot">&#8594;</button></div>
 </div>
 </div>
 </section>
-
+<section class="macro-plans" aria-label="Macro.io purchase options">
+<div class="macro-plan-grid">
+<article class="macro-plan macro-standard">
+<header class="macro-plan-head"><span class="macro-plan-label">Lifetime access</span><h2>Macro.io <span>Standard</span></h2><p>Core macros. One payment.</p></header>
+<img class="macro-plan-shot" src="img/macro/standard-drag.webp" alt="Macro.io Standard Drag Edit with Main Delay" width="440" height="320" loading="lazy" decoding="async">
+<ul class="macro-feature-list">
+<li>Drag Edit and Double Edit, with controller support</li>
+<li>Simple Main Delay adjustment</li>
+<li>Basic Auto Build</li>
+<li>Sprint, Pull Out, Pre-Fire, and Wall Retake</li>
+<li>Keyboard Auto Pick Up</li>
+<li>Custom keybinds, saved configs, and multiple languages</li>
+</ul>
+<div class="macro-purchase"><p class="macro-price"><strong>$15</strong><span>one-time payment</span></p><a class="macro-purchase-button" href="https://payhip.com/buy?link=xKhTB" target="_blank" rel="noopener">Buy Standard</a></div>
+</article>
+<div class="macro-pro-column">
+<article class="macro-plan macro-pro">
+<header class="macro-plan-head"><span class="macro-plan-label">Advanced features</span><h2>Macro.io <span>Pro</span></h2><p>Everything in Standard, plus:</p></header>
+<img class="macro-plan-shot" src="img/macro/pro-drag.webp" alt="Macro.io Pro with separate Edit Hold and Select Hold controls" width="440" height="320" loading="lazy" decoding="async">
+<ul class="macro-feature-list">
+<li>Advanced Drag Edit and Double Edit timings</li>
+<li>Dynamic Edit modes, including Guaranteed Tap and Mouse Stop</li>
+<li>Double Edit Mode and Queued Keys</li>
+<li>Always-On Auto Build and Turbo Build</li>
+<li>Advanced controller options, including Pull Out and Auto Pick Up</li>
+<li>Elevator 90s for keyboard</li>
+<li>Macro Lab testing and Macro IQ setup help</li>
+<li>Kill Switch, Restore Macros, Instant Reset, and color themes</li>
+</ul>
+<div class="macro-purchase"><p class="macro-price"><strong>$24.99</strong><span>first month</span></p><p class="macro-renewal-price">$9.99 for each monthly renewal</p><a class="macro-purchase-button" href="https://payhip.com/buy?link=NZ9tG" target="_blank" rel="noopener">Buy Pro</a><p class="macro-access-note">Includes Lifetime Standard. Keep Standard when Pro expires.</p></div>
+</article>
+<button class="macro-owner-link" id="macro-renew-open" type="button" aria-haspopup="dialog" aria-controls="macro-renew-dialog">Already own a key? Renew or upgrade for $9.99</button>
+</div>
+</div>
+</section>
 <section class="macro-plan-separator" aria-hidden="true">
 <div class="macro-plan-separator-inner"><hr></div>
 </section>
@@ -156,6 +121,22 @@ Use code <strong>UPD!</strong> for 12% off
 </ul>
 </section>
 
+</main>
+<dialog id="macro-renew-dialog" aria-labelledby="macro-renew-title" aria-describedby="macro-renew-description">
+<div class="macro-renew-panel">
+<button type="button" id="macro-renew-close" aria-label="Close key verification">&times;</button>
+<h2 id="macro-renew-title">Already own Macro.io?</h2>
+<p id="macro-renew-description">Enter a Standard, Pro, or Renew key to check access to the $9.99 Pro checkout.</p>
+<form id="macro-renew-form">
+<label for="macro-license-key">Your license key</label>
+<input id="macro-license-key" name="license_key" type="text" required minlength="5" maxlength="100" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Paste your key">
+<button type="submit" class="macro-purchase-button" id="macro-renew-submit">Verify key</button>
+</form>
+<p id="macro-renew-status" role="status" aria-live="polite"></p>
+<a id="macro-renew-checkout" class="macro-purchase-button" target="_blank" rel="noopener noreferrer" hidden>Continue to $9.99 checkout</a>
+<p class="macro-renew-help">Original keys from before the new plans and Lite keys do not qualify.</p>
+</div>
+</dialog>
 <footer class="footer">
 <div class="footer-content">
 <div class="footer-top">
@@ -186,7 +167,7 @@ Use code <strong>UPD!</strong> for 12% off
 </div>
 <p class="copyright">&copy; 2026 Lonware. All rights reserved.</p>
 </footer>
-<script src="script.js?v=nav22"></script>
+<script src="script.js?v=macro-rework1"></script>
 </body>
 </html>
 
