@@ -71,11 +71,11 @@ Use code <strong>UPD!</strong> for 12% off
 </div>
 </div>
 </section>
-<section class="macro-plans" aria-label="Macro.io purchase options">
+<section class="macro-plans" id="plans" aria-label="Macro.io purchase options">
 <div class="macro-plan-grid">
 <article class="macro-plan macro-standard">
 <header class="macro-plan-head"><span class="macro-plan-label">Lifetime access</span><h2>Macro.io <span>Standard</span></h2><p>Core macros. One payment.</p></header>
-<img class="macro-plan-shot" src="img/macro/standard-drag.webp" alt="Macro.io Standard Drag Edit with Main Delay" width="440" height="320" loading="lazy" decoding="async">
+<div class="macro-plan-media"><img class="macro-plan-shot" src="img/macro/standard-drag.webp" alt="Macro.io Standard Drag Edit with Main Delay" width="440" height="320" loading="lazy" decoding="async"></div>
 <ul class="macro-feature-list">
 <li>Drag Edit and Double Edit, with controller support</li>
 <li>Simple Main Delay adjustment</li>
@@ -89,17 +89,15 @@ Use code <strong>UPD!</strong> for 12% off
 <div class="macro-pro-column">
 <article class="macro-plan macro-pro">
 <header class="macro-plan-head"><span class="macro-plan-label">Advanced features</span><h2>Macro.io <span>Pro</span></h2><p>Everything in Standard, plus:</p></header>
-<img class="macro-plan-shot" src="img/macro/pro-drag.webp" alt="Macro.io Pro with separate Edit Hold and Select Hold controls" width="440" height="320" loading="lazy" decoding="async">
+<div class="macro-plan-media"><img class="macro-plan-shot" src="img/macro/pro-drag.webp" alt="Macro.io Pro with separate Edit Hold and Select Hold controls" width="440" height="320" loading="lazy" decoding="async"></div>
 <ul class="macro-feature-list">
-<li>Advanced Drag Edit and Double Edit timings</li>
-<li>Dynamic Edit modes, including Guaranteed Tap and Mouse Stop</li>
-<li>Double Edit Mode and Queued Keys</li>
+<li><strong>Advanced timings</strong> for Drag Edit and Double Edit</li>
+<li><strong>Dynamic Edit</strong>, Guaranteed Tap, and Mouse Stop</li>
 <li>Always-On Auto Build and Turbo Build</li>
-<li>Advanced controller options, including Pull Out and Auto Pick Up</li>
-<li>Elevator 90s for keyboard</li>
+<li>Kill Switch, Restore Macros, and Instant Reset</li>
 <li>Macro Lab testing and Macro IQ setup help</li>
-<li>Kill Switch, Restore Macros, Instant Reset, and color themes</li>
 </ul>
+<details class="macro-more-features"><summary>More Pro features</summary><ul class="macro-feature-list"><li>Separate Edit Hold and Select Hold controls</li><li>Double Edit Mode and Queued Keys</li><li>Controller Pull Out and Auto Pick Up</li><li>Elevator 90s for keyboard</li><li>Additional color themes</li></ul></details>
 <div class="macro-purchase"><p class="macro-price"><strong>$24.99</strong><span>first month</span></p><p class="macro-renewal-price">$9.99 for each monthly renewal</p><a class="macro-purchase-button" href="https://payhip.com/buy?link=NZ9tG" target="_blank" rel="noopener">Buy Pro</a><p class="macro-access-note">Includes Lifetime Standard. Keep Standard when Pro expires.</p></div>
 </article>
 <button class="macro-owner-link" id="macro-renew-open" type="button" aria-haspopup="dialog" aria-controls="macro-renew-dialog">Already own a key? Renew or upgrade for $9.99</button>
@@ -122,19 +120,16 @@ Use code <strong>UPD!</strong> for 12% off
 </section>
 
 </main>
-<dialog id="macro-renew-dialog" aria-labelledby="macro-renew-title" aria-describedby="macro-renew-description">
+<dialog id="macro-renew-dialog" aria-label="License key verification">
 <div class="macro-renew-panel">
 <button type="button" id="macro-renew-close" aria-label="Close key verification">&times;</button>
-<h2 id="macro-renew-title">Already own Macro.io?</h2>
-<p id="macro-renew-description">Enter a Standard, Pro, or Renew key to check access to the $9.99 Pro checkout.</p>
 <form id="macro-renew-form">
-<label for="macro-license-key">Your license key</label>
-<input id="macro-license-key" name="license_key" type="text" required minlength="5" maxlength="100" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Paste your key">
-<button type="submit" class="macro-purchase-button" id="macro-renew-submit">Verify key</button>
+<label class="macro-sr-only" for="macro-license-key">Enter key</label>
+<input id="macro-license-key" name="license_key" type="text" required minlength="5" maxlength="100" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Enter key">
+<button type="submit" class="macro-purchase-button" id="macro-renew-submit">Submit</button>
 </form>
 <p id="macro-renew-status" role="status" aria-live="polite"></p>
 <a id="macro-renew-checkout" class="macro-purchase-button" target="_blank" rel="noopener noreferrer" hidden>Continue to $9.99 checkout</a>
-<p class="macro-renew-help">Original keys from before the new plans and Lite keys do not qualify.</p>
 </div>
 </dialog>
 <footer class="footer">

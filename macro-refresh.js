@@ -73,8 +73,7 @@
     const controller = new AbortController();
     request = controller;
     submit.disabled = true;
-    submit.textContent = 'Checking key…';
-    status.textContent = 'Checking your key. This may take a few seconds.';
+    submit.textContent = 'Checking…';
     const timeout = setTimeout(() => controller.abort('timeout'), 25000);
     try {
       const response = await fetch('https://gowway.pythonanywhere.com/api/macro/renewal/verify', {
@@ -96,7 +95,7 @@
       }
       const url = new URL(data.checkout_url);
       if (url.protocol !== 'https:' || url.hostname !== 'payhip.com' || url.pathname !== '/buy' || url.searchParams.get('link') !== 'i627S') throw new Error('Invalid checkout');
-      status.textContent = 'Key verified. Your $9.99 Pro checkout is ready.';
+      status.textContent = '';
       checkout.href = url.href;
       checkout.hidden = false;
       checkoutExpiry = setTimeout(() => { resetResult(); status.textContent = 'Please verify your key again to continue.'; }, 300000);
@@ -104,7 +103,7 @@
       if (request === controller && dialog.open && (e.name !== 'AbortError' || controller.signal.reason === 'timeout')) error('Unable to check your key right now. Please try again.');
     } finally {
       clearTimeout(timeout);
-      if (request === controller) { submit.disabled = false; submit.textContent = 'Verify key'; }
+      if (request === controller) { submit.disabled = false; submit.textContent = 'Submit'; }
     }
   });
 })();
