@@ -1,0 +1,18 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {eligible,handle} from './index.mjs';
+const key='ABCDE-12345-FGHIJ-67890';
+const boundary='2026-11-11T12:00:00Z';
+const cutoff=Date.parse(boundary);
+const data=(id='xKhTB',date=boundary)=>({enabled:true,product_link:id,license_key:key,date});
+const env=()=>({MACRO_RENEWAL_CUTOVER_UTC:boundary,MACRO_STANDARD_PRODUCT_SECRET:'prod_sk_xKhTB_TEST',MACRO_PRO_PRODUCT_SECRET:'prod_sk_NZ9tG_TEST',MACRO_RENEW_PRODUCT_SECRET:'prod_sk_i627S_TEST',DB:{prepare(){return {bind(){return this;}}},async batch(){return [{},{},{results:[{hits:1}]}]}}});
+const req=(body={license_key:key},origin='https://lonware.com')=>new Request('https://example.invalid/api/macro/renewal/verify',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json','CF-Connecting-IP':'192.0.2.1'},body:JSON.stringify(body)});
+test('new Standard and Pro pass, legacy purchases fail',()=>{for(const id of ['xKhTB','NZ9tG']){assert.equal(eligible(data(id),id,key,cutoff),true);assert.equal(eligible(data(id,'2026-11-11T11:59:59Z'),id,key,cutoff),false);}});
+test('Renew permits repeat renewal without a legacy cutoff',()=>assert.equal(eligible(data('i627S','2026-11-01T00:00:00Z'),'i627S',key,cutoff),true));
+test('disabled, mismatched, future and ambiguous records fail',()=>{for(const bad of [null,{}, {...data(),enabled:false},{...data(),product_link:'uIdob'},{...data(),license_key:'OTHER'},data('xKhTB','2099-01-01T00:00:00Z'),data('xKhTB','2026-11-11T12:00:00')])assert.equal(eligible(bad,'xKhTB',key,cutoff),false);});
+test('valid key reveals only the direct checkout',async()=>{const r=await handle(req(),env(),async()=>Response.json({data:data()}));assert.equal(r.status,200);assert.deepEqual(await r.json(),{eligible:true,checkout_url:'https://payhip.com/buy?link=i627S'});assert.match(r.headers.get('Cache-Control'),/no-store/);});
+test('unknown key has no checkout',async()=>{const r=await handle(req(),env(),async()=>new Response(''));assert.equal(r.status,403);assert.equal((await r.json()).error,'ineligible');});
+test('provider failure fails closed',async()=>{const r=await handle(req(),env(),async()=>{throw new Error('offline')});assert.equal(r.status,503);});
+test('rate limiting precedes Payhip',async()=>{const e=env();e.DB.batch=async()=>[{},{},{results:[{hits:9}]}];const r=await handle(req(),e,async()=>{assert.fail('Must not call provider')});assert.equal(r.status,429);});
+test('disallowed origins and missing config fail',async()=>{assert.equal((await handle(req({},'https://evil.invalid'),env())).status,403);assert.equal((await handle(req(),{})).status,503);});
+test('bad input and preflight',async()=>{assert.equal((await handle(req({license_key:'<invalid>'}),env())).status,400);const r=await handle(new Request('https://example.invalid/api/macro/renewal/verify',{method:'OPTIONS',headers:{Origin:'https://lonware.com'}}),env());assert.equal(r.status,204);assert.equal(r.headers.get('Access-Control-Allow-Origin'),'https://lonware.com');});
