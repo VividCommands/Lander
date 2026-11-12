@@ -137,6 +137,7 @@ if (orbit) {
   let orbitTimer;
   let shotTimer;
   let orbitHeld = false;
+  let orbitVisible = false;
 
   products.forEach((product, index) => {
     product.dataset.shot = '0';
@@ -179,7 +180,7 @@ if (orbit) {
     if (shots.length < 2) return;
     const next = (Number(product.dataset.shot) + 1) % shots.length;
     try { await shots[next].decode(); } catch { return; }
-    if (product !== products[activeProduct] || orbitHeld || document.hidden) return;
+    if (product !== products[activeProduct] || orbitHeld || !orbitVisible || document.hidden) return;
     shots.forEach((shot, i) => { shot.classList.toggle('is-current', i === next); shot.setAttribute('aria-hidden', String(i !== next)); });
     product.dataset.shot = String(next);
   }
@@ -187,7 +188,7 @@ if (orbit) {
   function restartOrbit() {
     clearInterval(orbitTimer);
     clearInterval(shotTimer);
-    if (orbitHeld || document.hidden) return;
+    if (orbitHeld || !orbitVisible || document.hidden) return;
     orbitTimer = setInterval(() => rotateProducts(activeProduct + 1, 1), 15000);
     shotTimer = setInterval(advanceShots, 5000);
   }
@@ -204,7 +205,20 @@ if (orbit) {
   orbit.addEventListener('focusout', releaseOrbit);
   document.addEventListener('visibilitychange', restartOrbit);
 
-  restartOrbit();
+  document.querySelectorAll('#home a[href="#featured-products"]').forEach(link => {
+    link.addEventListener('click', () => {
+      rotateProducts(0);
+      restartOrbit();
+    });
+  });
+
+  const orbitObserver = new IntersectionObserver(entries => {
+    const visible = entries[0].isIntersecting && entries[0].intersectionRatio >= .2;
+    if (visible === orbitVisible) return;
+    orbitVisible = visible;
+    restartOrbit();
+  }, {threshold: [0, .2]});
+  orbitObserver.observe(orbit);
 }
 
 /* Testimonial slider */
@@ -238,7 +252,7 @@ if(testimonialSlides.length>1){setInterval(()=>showSlide(currentSlide+1),6000);}
 showSlide(0);
 
 /* Scroll reveal */
-const revealSelectors = 'section:not(.hero),.product-card,.package-card,.stat-item,.benefit-item,.testimonials-section,.purchase-feed-section,.metric,footer';
+const revealSelectors = 'section:not(.hero,#products),.product-card,.package-card,.stat-item,.benefit-item,.testimonials-section,.purchase-feed-section,.metric,footer';
 const revealEls = document.body.matches('.macro-page,.optii-page,.pingr-page') || matchMedia('(prefers-reduced-motion: reduce)').matches ? [] : document.querySelectorAll(revealSelectors);
 if (revealEls.length) {
   revealEls.forEach(el=>{if(!el.closest('.hero'))el.classList.add('reveal-hidden');});

@@ -34,7 +34,7 @@ body.pingr-page{height:auto!important;min-height:100%!important;overflow:visible
 .pingr-page main{overflow:visible!important}
 
 /* Sharper source presentation. */
-.pingr-hero-visual img{max-width:720px}
+.pingr-hero-visual img{max-width:720px;clip-path:polygon(2.3% 0,98% 0,100% 2.3%,100% 98%,98% 100%,2.3% 100%,.9% 98%,.9% 2.3%)}
 .pingr-library-visual{width:110%;margin-left:-5%}
 .pingr-orbit-visual .orbit-shot[src*="game-library-transparent-v4"]{inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;image-rendering:auto}
 @media(max-width:900px){.pingr-library-visual{width:104%;margin-left:-2%}}

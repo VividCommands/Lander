@@ -1,5 +1,32 @@
 /* Homepage-only layout corrections. */
 
+#featured-products {
+  scroll-margin-top: 80px;
+}
+
+@media (min-width: 901px) {
+  #products .product-orbit {
+    min-height: 0;
+    padding-bottom: 44px;
+    margin-bottom: 28px;
+  }
+
+  #products .orbit-stage {
+    min-height: 390px;
+  }
+}
+
+@media (max-width: 900px) {
+  #products .product-orbit {
+    min-height: 0 !important;
+    margin-bottom: 28px !important;
+  }
+
+  #products .orbit-stage {
+    min-height: 430px !important;
+  }
+}
+
 /* Keep both hero buttons level and center their labels vertically. */
 #home .hero-ctas {
   display: flex;
