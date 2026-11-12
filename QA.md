@@ -40,9 +40,16 @@ Scope: Macro presentation, complete screenshot galleries, home Macro imagery, an
 ## Pro copy, pricing and hover refinement
 
 - Pro has seven separate labels and no feature descriptions: Advanced timings, Dynamic Edit mode, Advanced Auto Build, Advanced Hotkeys, Instant Reset, Macro Lab and Macro IQ.
-- The footer explicitly presents $24.99 One time, $9.99 Per month to renew Pro and Lifetime access + 30 days of Pro. No First month label or duplicated inclusion note remains.
+- The footer explicitly presents $24.99 One time, $9.99 Per month to renew Pro and Lifetime access + 30 days of Pro. The initial price and renewal price now stack vertically, with centered access details and action beneath them. No First month label or duplicated inclusion note remains.
 - Pointer testing confirmed each card changes its border and shadow and reaches a transform of translateY(-3px). Leaving the cards restores transform none and the original border/shadow. Pro has its own warmer, stronger hover treatment.
-- At 320px, 375px and 768px iframe widths, both purchase buttons fit inside their cards and remain 44px high. Document scroll widths match client widths. Narrow Pro prices were reduced to 36px after a 3px text overflow was observed; rechecking 320px and 375px showed matching price client/scroll widths with no clipping.
+- At 320px, 375px and 768px iframe widths, both purchase buttons fit inside their cards and remain at least 44px high. Document scroll widths match client widths. After centering, both Pro prices have matching client/scroll widths without the former narrow-column font override.
 - The hero and automatic image catalogs are unchanged. Larger card images retain their original proportions and transparent surrounding areas.
+
+## Centered card content
+
+- Both cards' computed text alignment is center. Badge, name, feature headings, feature text, access copy and purchase actions follow the same axis. Each Pro plus and label center as a single row.
+- In all three responsive checks, purchase buttons had zero horizontal offset from the card center, and price centers differed by less than 0.01px. Pro's second price appears below the first rather than alongside it.
+- Desktop rendering was inspected after the layout change. The initial price uses 40px type; the centered monthly renewal amount uses 28px type. Both retain their existing explanatory labels.
+- No feature wording, values, image sizing, hover treatment, other pages, JavaScript or checkout destinations changed in this alignment refinement. The inspected Macro console showed no application errors.
 
 Checkout destinations were verified from website markup only. No Payhip account actions or purchases were performed for these corrections. No physical-device test, purchase/download test, Lighthouse score, or field Web Vitals measurement is claimed.
