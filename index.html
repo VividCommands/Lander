@@ -29,8 +29,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>.pingr-orbit-visual{background:transparent!important}</style>
-<link rel="stylesheet" href="macro-home.css?v=3">
-<link rel="stylesheet" href="product-polish.css?v=3">
+<link rel="stylesheet" href="macro-home.css?v=4">
+<link rel="stylesheet" href="product-polish.css?v=4">
+<script src="macro-refresh.js?v=4" type="module"></script>
 </head>
 <body>
 <div class="announcement-bar">
@@ -66,13 +67,9 @@ Use code <strong>UPD!</strong> for 12% off
 <div class="product-orbit" aria-roledescription="carousel" aria-label="Featured Lonware products">
   <div class="orbit-stage">
     <article class="orbit-product is-front" data-product-index="0">
-      <div class="orbit-visual" aria-label="Macro.io screenshots">
-        <span class="orbit-edition is-pro">Pro</span>
-        <img src="img/macro/pro-workspace.webp" data-tier="Pro" alt="Macro.io Pro with Macro IQ and app menu" class="orbit-shot macro-workspace-image is-current" width="986" height="414" loading="eager" decoding="async" fetchpriority="high">
-        <img src="img/macro/standard-drag.webp" data-tier="Standard" alt="Macro.io Standard Drag Edit" class="orbit-shot macro-single-image" width="440" height="320" loading="lazy" decoding="async">
-        <img src="img/macro/pro-controller.webp" data-tier="Pro" alt="Macro.io Pro controller settings" class="orbit-shot macro-single-image" width="440" height="320" loading="lazy" decoding="async">
-        <img src="img/macro/pro-build.webp" data-tier="Pro" alt="Macro.io Pro Turbo Auto Build" class="orbit-shot macro-single-image" width="440" height="320" loading="lazy" decoding="async">
-      </div>
+      <button type="button" class="orbit-visual macro-home-slides" data-macro-gallery="all" data-format="workspace" data-interval="5200" aria-label="Macro.io screenshots. Hold the image to pause, release to continue.">
+        <img src="img/macro/pro-workspace.webp" alt="Macro.io Pro with Macro IQ and app menu" width="986" height="414" loading="eager" decoding="async" fetchpriority="high" draggable="false">
+      </button>
       <div class="orbit-copy"><h2>Macro.io</h2><div class="lineup-chips"><span>Keyboard + controller</span><span>Custom timing</span><span>Saved configs</span></div><a href="macro.html" class="package-button">Explore Macro.io</a></div>
     </article>
     <article class="orbit-product is-behind" data-product-index="1">
@@ -93,7 +90,6 @@ Use code <strong>UPD!</strong> for 12% off
   <button class="orbit-arrow orbit-prev" type="button" aria-label="Bring previous product forward">&#8592;</button>
   <button class="orbit-arrow orbit-next" type="button" aria-label="Bring next product forward">&#8594;</button>
   <div class="orbit-controls" aria-label="Choose a featured product"></div>
-  <button class="orbit-pause" type="button" aria-label="Pause product carousel">Pause</button>
 </div>
 <div class="product-grid product-grid-5" id="product-grid">
 <a href="pc.html" class="product-card-link">
@@ -247,7 +243,7 @@ Use code <strong>UPD!</strong> for 12% off
 </div>
 <p class="copyright">&copy; 2026 Lonware. All rights reserved.</p>
 </footer>
-<script src="script.js?v=product-polish3"></script>
+<script src="script.js?v=macro-corrections4"></script>
 </body>
 </html>
 

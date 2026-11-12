@@ -136,11 +136,7 @@ if (orbit) {
   let activeProduct = 0;
   let orbitTimer;
   let shotTimer;
-  const orbitMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  let orbitPaused = orbitMotion.matches;
-  let orbitHovered = false;
-  let orbitFocused = false;
-  const pauseOrbit = orbit.querySelector('.orbit-pause');
+  let orbitHeld = false;
 
   products.forEach((product, index) => {
     product.dataset.shot = '0';
@@ -183,29 +179,28 @@ if (orbit) {
       const next = (Number(product.dataset.shot) + 1) % shots.length;
       shots.forEach((shot, i) => { shot.classList.toggle('is-current', i === next); shot.setAttribute('aria-hidden', String(i !== next)); });
       product.dataset.shot = String(next);
-      const edition = product.querySelector('.orbit-edition');
-      if (edition) { edition.textContent = shots[next].dataset.tier; edition.classList.toggle('is-pro', shots[next].dataset.tier === 'Pro'); }
     });
   }
 
   function restartOrbit() {
     clearInterval(orbitTimer);
     clearInterval(shotTimer);
-    if (pauseOrbit) { pauseOrbit.textContent = orbitPaused ? 'Play' : 'Pause'; pauseOrbit.setAttribute('aria-label', orbitPaused ? 'Play product carousel' : 'Pause product carousel'); }
-    if (orbitPaused || orbitHovered || orbitFocused || document.hidden) return;
-    orbitTimer = setInterval(() => rotateProducts(activeProduct + 1, 1), 7000);
-    shotTimer = setInterval(advanceShots, 3500);
+    if (orbitHeld || document.hidden) return;
+    orbitTimer = setInterval(() => rotateProducts(activeProduct + 1, 1), 11000);
+    shotTimer = setInterval(advanceShots, 6500);
   }
 
   orbit.querySelector('.orbit-prev').addEventListener('click', () => { rotateProducts(activeProduct - 1, -1); restartOrbit(); });
   orbit.querySelector('.orbit-next').addEventListener('click', () => { rotateProducts(activeProduct + 1, 1); restartOrbit(); });
-  orbit.addEventListener('mouseenter', () => { orbitHovered = true; restartOrbit(); });
-  orbit.addEventListener('focusin', () => { orbitFocused = true; restartOrbit(); });
-  orbit.addEventListener('focusout', event => { orbitFocused = orbit.contains(event.relatedTarget); restartOrbit(); });
+  const releaseOrbit = () => { if (!orbitHeld) return; orbitHeld = false; restartOrbit(); };
+  orbit.addEventListener('pointerdown', event => { if (event.button === 0 && event.target.closest('.orbit-visual')) { orbitHeld = true; restartOrbit(); } });
+  window.addEventListener('pointerup', releaseOrbit);
+  window.addEventListener('pointercancel', releaseOrbit);
+  window.addEventListener('blur', releaseOrbit);
+  orbit.addEventListener('keydown', event => { if (['Space','Enter'].includes(event.code) && event.target.closest('.orbit-visual')) { orbitHeld = true; restartOrbit(); } });
+  orbit.addEventListener('keyup', releaseOrbit);
+  orbit.addEventListener('focusout', releaseOrbit);
   document.addEventListener('visibilitychange', restartOrbit);
-  if (pauseOrbit) pauseOrbit.addEventListener('click', () => { orbitPaused = !orbitPaused; restartOrbit(); });
-  orbit.addEventListener('mouseleave', () => { orbitHovered = false; restartOrbit(); });
-  orbitMotion.addEventListener('change', () => { orbitPaused = orbitMotion.matches; restartOrbit(); });
 
   restartOrbit();
 }

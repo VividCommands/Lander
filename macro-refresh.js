@@ -1,45 +1,72 @@
-(() => {
-  const gallery = document.querySelector('.macro-gallery');
-  if (!gallery) return;
-  const frames = [...gallery.querySelectorAll('.macro-frame')];
-  frames.forEach(frame => { frame.querySelector('img').loading = 'eager'; });
-  const edition = document.getElementById('macro-edition');
-  const caption = document.getElementById('macro-caption');
-  const position = document.getElementById('macro-position');
-  const pause = gallery.querySelector('[data-gallery="pause"]');
-  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  let current = 0;
-  let paused = reducedMotion.matches;
+import {lifetime, pro, all} from './macro-slides.js?v=4';
+
+const sets = {lifetime, pro, all};
+const cached = new Map();
+function preload(slide) {
+  if (!cached.has(slide.src)) {
+    const image = new Image();
+    image.src = slide.src;
+    cached.set(slide.src, image.decode().then(() => true).catch(() => false));
+  }
+  return cached.get(slide.src);
+}
+
+document.querySelectorAll('[data-macro-gallery]').forEach(gallery => {
+  const slides = sets[gallery.dataset.macroGallery];
+  const image = gallery.querySelector('img');
+  if (!slides?.length || !image) return;
+  const interval = Number(gallery.dataset.interval) || 6000;
+  let index = 0;
+  let held = false;
   let timer;
-  let hovered = false;
-  let focused = false;
-  function show(index) {
-    current = (index + frames.length) % frames.length;
-    frames.forEach((frame, i) => {
-      frame.hidden = i !== current;
-      frame.classList.toggle('is-current', i === current);
-    });
-    edition.textContent = frames[current].dataset.tier;
-    edition.classList.toggle('is-pro', edition.textContent === 'Pro');
-    caption.textContent = frames[current].dataset.caption;
-    position.textContent = `${current + 1} / ${frames.length}`;
-    position.setAttribute('aria-label', `Screenshot ${current + 1} of ${frames.length}`);
+  let generation = 0;
+  const initial = slides.findIndex(slide => image.getAttribute('src') === slide.src);
+  if (initial >= 0) index = initial;
+  slides.forEach(preload);
+  function schedule() {
+    clearTimeout(timer);
+    if (!held && !document.hidden) timer = setTimeout(advance, interval);
   }
-  function restart() {
-    clearInterval(timer);
-    pause.textContent = paused ? 'Play' : 'Pause';
-    pause.setAttribute('aria-label', paused ? 'Play screenshots' : 'Pause screenshots');
-    if (!paused && !hovered && !focused && !document.hidden) timer = setInterval(() => show(current + 1), 6000);
+  async function advance() {
+    const token = ++generation;
+    const next = (index + 1) % slides.length;
+    const slide = slides[next];
+    const loaded = await preload(slide);
+    if (token !== generation || held || document.hidden) return;
+    if (loaded) {
+      image.src = slide.src;
+      image.alt = slide.alt;
+      image.width = slide.width;
+      image.height = slide.height;
+      gallery.dataset.format = slide.format;
+    }
+    index = next;
+    schedule();
   }
-  gallery.querySelector('[data-gallery="prev"]').addEventListener('click', () => { show(current - 1); restart(); });
-  gallery.querySelector('[data-gallery="next"]').addEventListener('click', () => { show(current + 1); restart(); });
-  pause.addEventListener('click', () => { paused = !paused; restart(); });
-  gallery.addEventListener('mouseenter', () => { hovered = true; restart(); });
-  gallery.addEventListener('mouseleave', () => { hovered = false; restart(); });
-  gallery.addEventListener('focusin', () => { focused = true; restart(); });
-  gallery.addEventListener('focusout', event => { focused = gallery.contains(event.relatedTarget); restart(); });
-  document.addEventListener('visibilitychange', restart);
-  reducedMotion.addEventListener('change', () => { paused = reducedMotion.matches; restart(); });
-  show(0);
-  restart();
-})();
+  function hold() { held = true; generation++; clearTimeout(timer); }
+  function release() { if (!held) return; held = false; schedule(); }
+  gallery.addEventListener('pointerdown', event => {
+    if (event.button !== 0) return;
+    hold();
+    gallery.setPointerCapture(event.pointerId);
+  });
+  gallery.addEventListener('pointerup', release);
+  gallery.addEventListener('pointercancel', release);
+  gallery.addEventListener('lostpointercapture', release);
+  gallery.addEventListener('contextmenu', event => event.preventDefault());
+  gallery.addEventListener('keydown', event => {
+    if (!['Space', 'Enter'].includes(event.code)) return;
+    event.preventDefault();
+    hold();
+  });
+  gallery.addEventListener('keyup', event => {
+    if (!['Space', 'Enter'].includes(event.code)) return;
+    event.preventDefault();
+    release();
+  });
+  gallery.addEventListener('blur', release);
+  window.addEventListener('pointerup', release);
+  window.addEventListener('blur', release);
+  document.addEventListener('visibilitychange', () => { generation++; schedule(); });
+  schedule();
+});
