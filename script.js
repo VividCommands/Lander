@@ -170,24 +170,26 @@ if (orbit) {
       if (i === activeProduct) dot.setAttribute('aria-current', 'true');
       else dot.removeAttribute('aria-current');
     });
+    restartOrbit();
   }
 
-  function advanceShots() {
-    products.forEach(product => {
-      const shots = [...product.querySelectorAll('.orbit-shot')];
-      if (shots.length < 2) return;
-      const next = (Number(product.dataset.shot) + 1) % shots.length;
-      shots.forEach((shot, i) => { shot.classList.toggle('is-current', i === next); shot.setAttribute('aria-hidden', String(i !== next)); });
-      product.dataset.shot = String(next);
-    });
+  async function advanceShots() {
+    const product = products[activeProduct];
+    const shots = [...product.querySelectorAll('.orbit-shot')];
+    if (shots.length < 2) return;
+    const next = (Number(product.dataset.shot) + 1) % shots.length;
+    try { await shots[next].decode(); } catch { return; }
+    if (product !== products[activeProduct] || orbitHeld || document.hidden) return;
+    shots.forEach((shot, i) => { shot.classList.toggle('is-current', i === next); shot.setAttribute('aria-hidden', String(i !== next)); });
+    product.dataset.shot = String(next);
   }
 
   function restartOrbit() {
     clearInterval(orbitTimer);
     clearInterval(shotTimer);
     if (orbitHeld || document.hidden) return;
-    orbitTimer = setInterval(() => rotateProducts(activeProduct + 1, 1), 11000);
-    shotTimer = setInterval(advanceShots, 6500);
+    orbitTimer = setInterval(() => rotateProducts(activeProduct + 1, 1), 15000);
+    shotTimer = setInterval(advanceShots, 5000);
   }
 
   orbit.querySelector('.orbit-prev').addEventListener('click', () => { rotateProducts(activeProduct - 1, -1); restartOrbit(); });

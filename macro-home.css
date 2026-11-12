@@ -1,10 +1,9 @@
 .macro-home-slides{display:flex;align-items:center;justify-content:center;width:100%;padding:0;border:0;background:transparent;color:inherit;cursor:grab;touch-action:pan-y;user-select:none;-webkit-tap-highlight-color:transparent}
 .macro-home-slides:active{cursor:grabbing}
 .macro-home-slides:focus-visible{outline:2px solid #acd6ef;outline-offset:7px;border-radius:5px}
-.macro-home-slides img{display:block;width:auto;max-width:100%;height:auto;max-height:320px;object-fit:contain;pointer-events:none;user-select:none;-webkit-user-drag:none}
-.macro-home-slides[data-format=workspace] img{width:986px;max-width:100%;max-height:none;mask:url('img/masks/macro-workspace.svg') center/100% 100% no-repeat}
-.macro-home-slides[data-format=wide] img{max-height:360px}
+.macro-home-slides img{display:block;width:auto!important;max-width:100%;height:auto!important;max-height:100%!important;object-fit:contain;pointer-events:none;user-select:none;-webkit-user-drag:none}
+.macro-home-slides[data-format=workspace] img{mask:url('img/masks/macro-workspace.svg') center/100% 100% no-repeat}
 .orbit-product[data-product-index="0"]{grid-template-columns:1.4fr .6fr;gap:32px}
 .orbit-product[data-product-index="0"] .orbit-visual{height:390px}
-@media(max-width:900px){.orbit-product[data-product-index="0"]{grid-template-columns:1fr}.macro-home-slides img{max-height:280px}.macro-home-slides[data-format=workspace] img{max-height:none}}
+@media(max-width:900px){.orbit-product[data-product-index="0"]{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.product-orbit *{transition:none!important;animation:none!important}}
