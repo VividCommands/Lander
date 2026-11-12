@@ -63,3 +63,9 @@ Checkout destinations were verified from website markup only. No Payhip account 
 - PingR loads the existing 1419 by 1108 transparent PNG at the same 720px desktop display width. The restored text and controls are visibly clearer than the former WebP. A small corner clip removes the exterior bottom-left specks. At 375px the image loads within its container and the document has matching 360px client/scroll widths.
 - Macro intervals are 3200ms for the hero and 4200ms for both purchase cards. Browser observation confirmed that all three advance automatically to different loaded screenshots. Their image catalogs and hold-to-pause behavior are unchanged.
 - JavaScript syntax and Git whitespace checks pass. This update changes no purchase values, direct checkout destinations, Payhip settings or original image bytes.
+
+## Space below the featured showcase
+
+- Increased the showcase's bottom margin from 28px to 72px on desktop and 56px on stacked layouts. The scroll anchor remains 80px from the viewport top.
+- At the 1348px desktop viewport, View Products still lands at about 80px; the four-card grid now starts at 586px, 44px lower than before. At 375px and 768px iframe widths, the anchor remains at about 80px and the grid starts at 618px. Both documents retain matching client/scroll widths.
+- Inspected the desktop result and verified the button on both responsive layouts. No carousel timings, image sizes, purchase details or other pages changed. Git whitespace checks pass.
