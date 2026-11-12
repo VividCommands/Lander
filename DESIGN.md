@@ -1,21 +1,17 @@
-# Lonware product update direction
+# Lonware product direction
 
-Source: the owner's November 11 website brief, follow-up design corrections, and supplied Standard/Pro screenshots. The owner has cancelled website key verification and the upgrade-link flow. Only the existing direct Standard and Pro checkout links remain.
+Follow the owner's November 12 corrections. Website work only: Payhip products, names, visibility, pricing settings, and delivery files are outside this update. Preserve the existing direct checkout destinations. The Cloudflare checker and upgrade popup remain cancelled.
 
-Keep Lonware's navy identity and Rajdhani/Montserrat typography: Rajdhani carries product titles and pricing; Montserrat keeps the feature copy readable. The owner explicitly wants refinement, depth, restrained outlines, and compact spacing, not flat panels or tall playing-card layouts.
+Keep Lonware's navy background, Rajdhani titles, Montserrat feature copy, illuminated outlines, and compact product presentation. Restore the corner planet and radial background depth. Refine the existing identity without replacing it with a generic flat comparison panel.
 
-Macro uses an open split composition so the real application has room beside its introduction. The new Pro screenshot shows the actual IQ and menu windows. Phone layouts use the existing single-window Pro screenshot so timing controls remain legible. Screenshot labels always match the edition shown. Rotation is optional, pauses during interaction, and starts paused for reduced-motion users.
+Macro opens with its name and “Keyboard and controller macros.” The application itself is the hero: no Windows eyebrow, edition jump link, underline, caption strip, counters, image arrows, or Play/Pause buttons. The newer IQ composite can render up to its native 986px width; its exact window mask removes the external black canvas without changing application pixels.
 
-The two real editions share a purchase surface, making their prices and feature differences easy to compare without repeating screenshots in tall separate cards. Standard appears first. Blue identifies Standard; a warm top edge and edition name identify Pro. Most copy stays neutral. Edge highlights and recessed shadows distinguish the purchase surface from the page; short blue and warm buttons have visible hover, active, and keyboard-focus states.
+Two separate purchase cards have deliberately different treatments. Lifetime uses cool blue borders and a compact feature list. Pro uses bronze edges and a warmer surface, with clear feature headings and short supporting descriptions. Each card contains its own image rotation and matching purchase button. The base edition is called Macro.io with a Lifetime access label; avoid repeatedly calling it Standard. Macro's visible copy uses no dash punctuation or hyphenated terms.
 
-The navy canvas is the established brand rather than a generic dark-mode default. A subtle vertical luminance change separates the open hero from the purchase area. Macro and PingR omit animated particles so product imagery holds attention. No new decorative icons, generic feature cards, invented metrics, or testimonials are added.
+Use every supplied screenshot: five Lifetime screenshots, fourteen original Pro screenshots, and the newer IQ composite. The hero and home Macro showcase cycle all twenty. The Lifetime card cycles five; Pro cycles fifteen. Main rotation takes five seconds, while the card galleries take roughly seven. Predecode the next image before replacing the current one. Keep the image area stable as differently sized screenshots rotate. Hover and keyboard focus do not stop autoplay. Holding the image pauses it until release; leaving focus or the window clears a held state. Hidden browser tabs suspend timers.
 
-The gallery arrows navigate screenshots; the single down arrow on the edition link indicates an in-page scroll. Touch targets remain at least 44px, including the carousel selector hit areas.
+The home product carousel retains its existing product navigation. Remove its extra edition badge and pause button, and enlarge the Macro IQ presentation within the established layout. The Products page uses the controller Drag Edit screenshot in a contained media area comparable to adjacent products.
 
-Optii's expanded screenshot keeps its original pixels. An SVG mask follows the exact bounds of its four app windows, removing only the external black canvas. The same treatment appears in the home carousel. The showcase heading is reduced to balance the screenshot and avoid awkward line breaks.
+Preserve the prior Optii exact-window mask and the PingR palette/asset cleanup. This correction does not redesign either page. Macro and PingR continue to omit the particle animation; Macro's static planet provides depth.
 
-PingR retains its existing structure. Muted green marks product-specific details against Lonware navy. Clean existing dashboard artwork replaces the corner-artifact image. Directional highlights and restrained shadows restore depth without layering green and blue glows.
-
-Pricing: Standard Lifetime $15 once; Pro $24.99 first month and $9.99 per monthly renewal. Do not describe renewals as automatic billing. Pro includes Standard access after expiry. Only the two direct Payhip purchase destinations are presented; renewal access is handled outside this website as requested.
-
-Energy 2 / Rhythm 2 / Motion 2. Spacing follows the content: open application showcase, compact purchase comparison, and quieter terms. The Anti-Slop core was reviewed as a filter while preserving the owner's chosen identity.
+Website prices remain $15 for Lifetime and $24.99 for the first month of Pro, with $9.99 monthly renewals. Do not imply automatic recurring billing. Preserve xKhTB for Lifetime and NZ9tG for Pro. No merchant account changes belong in this task.

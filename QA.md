@@ -1,30 +1,24 @@
-# Product update checks
+# November 12 website correction checks
 
-Scope: Macro Standard/Pro presentation and direct checkout links, updated home imagery, Optii screenshot clipping, and PingR palette/asset cleanup. Website license checking and the renewal/upgrade popup were removed at the owner's request.
+Scope: Macro presentation, complete screenshot galleries, home Macro imagery, and Products image sizing. Payhip account changes and website license verification are excluded.
 
-## Static checks
+## Static verification
 
-- JavaScript syntax checks passed for script.js and macro-refresh.js.
-- Git whitespace checks passed.
-- Local image, stylesheet, and script paths resolve for macro.html, index.html, pc.html, ping.html, packages.html, and faq.html. These pages have no duplicate IDs.
-- Macro has exactly the two approved direct Payhip checkout destinations and no dialog, form, or key input. Its gallery script contains no license-verification request.
+- JavaScript syntax checks passed for script.js, macro-refresh.js, and macro-slides.js. Git whitespace checks passed.
+- The gallery catalog has exactly 5 unique Lifetime images, 15 unique Pro images, and 20 unique combined images. Every referenced file exists.
+- All 19 original screenshots were copied byte for byte from the supplied ZIP. The twentieth image is the existing newer IQ composite. Source pixels were not regenerated or resized in the files.
+- Local resource references resolve for the edited HTML pages. Macro has only the existing xKhTB and NZ9tG direct checkout links, with no key input, dialog, or verification request.
+- Macro visible copy contains no Standard label, For Windows eyebrow, Choose your edition control, or dash punctuation. Home contains no edition badge or Play/Pause control.
 
-## Browser evidence
+## Browser verification
 
-- Macro next: cycled through all five screenshots; each image loaded, exactly one frame stayed visible, and its caption, edition, and position matched.
-- Macro previous: Enter on the previous button moved from screenshot 1 to screenshot 5.
-- Macro pause/play: each action changed the visible label and accessible name; manual navigation remained available while paused.
-- Choose your edition: navigated to the real #plans section.
-- Home product selectors: Macro.io, Optii, and PingR each came forward with the matching current-selector label. Previous moved PingR to Optii; next returned to PingR.
-- Home inactive products have inert and aria-hidden attributes, preventing keyboard focus on their invisible links.
-- Home pause: changed Pause to Play with the matching accessible name.
-- Optii See how it works: navigated to the existing section. The expanded screenshot was inspected with the black exterior clipped to the four original windows; its controls and text remain the original pixels.
-- Product pages were checked inside 375px-wide browser iframes. Each had a 360px client width after the native scrollbar and a matching scroll width, with no horizontal overflow. Macro's phone image uses the 440px Pro screenshot and renders at 320px; gallery hit areas are 44 by 44px, and purchase buttons are 46px high.
-- Product sections no longer receive reveal-hidden, avoiding content that waits for an intersection animation before appearing.
-- The inspected application consoles showed no application error; the browser extension reported unrelated metadata errors.
+- Desktop Macro hero and both cards advanced automatically to different loaded images without any Play action. Cards use slower intervals than the hero.
+- Holding the Lifetime image for 8 seconds kept the same source throughout, exceeding its 6.8 second interval. After release the source advanced again despite the image retaining keyboard focus.
+- Desktop cards were inspected with distinct blue and bronze surfaces, application images, feature copy, prices, and purchase buttons. The planet is visible behind the hero, and the IQ composite is larger than in the previous layout.
+- Home's existing product selector brought Macro forward; its screenshot rotated automatically. No extra edition label or pause button is present.
+- The Products page was inspected with its different Macro controller screenshot and contained sizing beside the other product images.
+- Macro was inspected at 320px, 375px, and 768px iframe widths. Document client widths were respectively 305px, 360px, and 753px after native scrollbars, with matching scroll widths and no horizontal overflow. The narrow layout stacks the cards.
+- Home and Products were checked at 375px iframe width: both had matching 360px client/scroll widths and loaded Macro images.
+- Inspected Macro and home console logs contained no application errors.
 
-## Checkout checks
-
-The existing xKhTB checkout was observed showing Macro.io Standard Lifetime at $15.00. The existing NZ9tG checkout was observed showing Macro.io Pro at $24.99. Both lead directly to checkout. Displayed tax varies by buyer location. Pro was changed from Invisible to Unlisted so its direct link can be used by visitors. Download files were not replaced, and no purchase was submitted.
-
-No physical-device test, real purchase/download test, Lighthouse score, or field Web Vitals measurement is claimed.
+Checkout destinations were verified from website markup only. No Payhip account actions or purchases were performed for these corrections. No physical-device test, purchase/download test, Lighthouse score, or field Web Vitals measurement is claimed.
