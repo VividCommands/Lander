@@ -84,7 +84,7 @@ body.macro-page {
   border-radius: 16px;
   background: linear-gradient(155deg, #0a1831, #040c1b 72%);
   box-shadow: inset 0 1px #c4def414, 0 18px 40px #0006, 0 0 22px #2b77b914;
-  text-align: left;
+  text-align: center;
   font-family: 'Montserrat', 'Segoe UI', sans-serif;
   transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
@@ -145,12 +145,10 @@ body.macro-page {
 .macro-feature-list { list-style: none; margin: 0; padding: 0; }
 .macro-feature-list li { position: relative; padding: 0 0 10px; }
 .macro-feature-list li:last-child { padding-bottom: 0; }
-.macro-pro .macro-feature-list li { padding-left: 23px; }
+.macro-pro .macro-feature-list li { display: flex; align-items: baseline; justify-content: center; gap: 8px; padding-left: 0; }
 .macro-pro .macro-feature-list li::before {
   content: '+';
-  position: absolute;
-  top: -1px;
-  left: 0;
+  flex: none;
   width: 13px;
   height: 20px;
   border: 0;
@@ -163,21 +161,22 @@ body.macro-page {
 .macro-feature-list span { display: block; margin-top: 3px; color: #adbed4; font-size: 12px; line-height: 1.6; }
 .macro-purchase {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 18px 16px;
+  justify-content: center;
+  gap: 14px;
   margin-top: 20px;
 }
 .macro-price-block { min-width: 0; }
-.macro-price { display: flex; flex-direction: column; gap: 2px; margin: 0; color: #c4d4e7; font-size: 12px; line-height: 1.5; }
+.macro-price { display: flex; flex-direction: column; align-items: center; gap: 2px; margin: 0; color: #c4d4e7; font-size: 12px; line-height: 1.5; }
 .macro-price strong { font: 600 40px / 1.05 'Rajdhani', sans-serif; letter-spacing: -.7px; color: #f2f7fc; }
-.macro-pro-purchase { display: grid; gap: 16px; }
-.macro-pro-prices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.macro-pro-purchase { display: grid; justify-content: stretch; justify-items: center; gap: 12px; }
+.macro-pro-prices { display: grid; width: 100%; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 10px; }
 .macro-pro .macro-price { color: #e4d9cd; }
 .macro-pro-prices .macro-price > span { font-weight: 500; }
-.macro-renewal-price strong { color: #f3c98e; }
-.macro-pro-checkout { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; }
+.macro-renewal-price { align-items: center; gap: 2px; }
+.macro-renewal-price strong { color: #f3c98e; font-size: 28px; }
+.macro-pro-checkout { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
 .macro-license { margin: 0; color: #e1d8d0; font-size: 13px; line-height: 1.6; }
 .macro-license > span { padding: 0 4px; color: #f0b671; }
 .macro-license strong { color: #f6dfbf; font-weight: 500; }
@@ -241,7 +240,6 @@ body.macro-page {
   .macro-page .macro-plan h2 { font-size: 38px; }
   .macro-card-gallery { height: 184px; }
   .macro-card-gallery img { max-height: 180px; }
-  .macro-pro-prices .macro-price strong { font-size: 36px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .macro-page * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
