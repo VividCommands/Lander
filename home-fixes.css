@@ -27,6 +27,22 @@
   }
 }
 
+@media (min-width: 769px) and (max-width: 900px) {
+  #products .orbit-product {
+    grid-template-rows: 224px auto;
+    align-content: start;
+    gap: .8rem;
+  }
+
+  #products .orbit-stage {
+    min-height: 450px !important;
+  }
+
+  #products .orbit-visual {
+    height: 224px !important;
+  }
+}
+
 /* Keep both hero buttons level and center their labels vertically. */
 #home .hero-ctas {
   display: flex;
