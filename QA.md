@@ -1,4 +1,4 @@
-# November 12 website correction checks
+# Website correction checks
 
 Scope: Macro presentation, complete screenshot galleries, home Macro imagery, and Products image sizing. Payhip account changes and website license verification are excluded.
 
@@ -14,7 +14,7 @@ Scope: Macro presentation, complete screenshot galleries, home Macro imagery, an
 
 - Desktop Macro hero and both cards advanced automatically to different loaded images without any Play action. Cards use slower intervals than the hero.
 - Holding the Lifetime image for 8 seconds kept the same source throughout, exceeding its 6.8 second interval. After release the source advanced again despite the image retaining keyboard focus.
-- Desktop cards were inspected after the current correction with deep navy surfaces, contrasting badges, Included features and Only in Pro headings, blue checks and gold additions. The compact purchase actions have different emphasis and share a footer with their prices. Header descriptions remain removed. The original planet remains unchanged. Hero app windows are reduced from the previous update with more space above the cards.
+- Desktop cards were inspected with distinct navy and warm copper/charcoal surfaces, contrasting badges and separate feature headings. Lifetime checkmarks and the internal separator lines are removed; Pro keeps its gold plus markers. Card screenshots are larger and the surrounding spacing is tighter. The original planet and hero remain unchanged in this refinement.
 - Home's existing product selector brought Macro forward; its screenshot rotated automatically. No extra edition label or pause button is present.
 - The Products page was inspected with its different Macro controller screenshot and contained sizing beside the other product images.
 - Macro was inspected at 320px, 375px, and 768px iframe widths. Document client widths were respectively 305px, 360px, and 753px after native scrollbars, with matching scroll widths and no horizontal overflow. The narrow layout stacks the cards.
@@ -34,7 +34,15 @@ Scope: Macro presentation, complete screenshot galleries, home Macro imagery, an
 - Rechecked Macro at 320px, 375px and 768px iframe widths. Client/scroll widths match at 305px, 360px and 753px respectively. Both purchase buttons remain within their cards at all three sizes, with 44px minimum height. The footer wraps on narrow cards.
 - Keyboard Tab moves from the Lifetime gallery to Buy Lifetime, then the Pro gallery and Buy Pro. Both links show a 2px visible focus outline. Their original checkout destinations remain xKhTB and NZ9tG; no checkout was opened.
 - Lifetime and Pro badge, feature and button foreground/background pairs were checked against the lightest relevant card colors. All sampled pairs exceed 9:1 contrast. Decorative markers are not the only way to distinguish features; headings and readable names provide the same meaning.
-- The Products Macro image is now 163 by 119px at the inspected desktop width, with transparent computed background and no filter. Its visible size is comparable to the neighboring application screenshots. Its stylesheet follows packages-fixes.css, eliminating the earlier conflicting size rule.
+- The Products Macro image is now 183 by 133px at the inspected desktop width, about 12% larger than the previous 163 by 119px size. Its computed background remains transparent, with no filter. The price text is exactly $15. Its stylesheet follows packages-fixes.css.
 - No JavaScript, original image files, home carousel behavior, or dependencies changed in this correction. Macro's inspected console contains no application errors.
+
+## Pro copy, pricing and hover refinement
+
+- Pro has seven separate labels and no feature descriptions: Advanced timings, Dynamic Edit mode, Advanced Auto Build, Advanced Hotkeys, Instant Reset, Macro Lab and Macro IQ.
+- The footer explicitly presents $24.99 One time, $9.99 Per month to renew Pro and Lifetime access + 30 days of Pro. No First month label or duplicated inclusion note remains.
+- Pointer testing confirmed each card changes its border and shadow and reaches a transform of translateY(-3px). Leaving the cards restores transform none and the original border/shadow. Pro has its own warmer, stronger hover treatment.
+- At 320px, 375px and 768px iframe widths, both purchase buttons fit inside their cards and remain 44px high. Document scroll widths match client widths. Narrow Pro prices were reduced to 36px after a 3px text overflow was observed; rechecking 320px and 375px showed matching price client/scroll widths with no clipping.
+- The hero and automatic image catalogs are unchanged. Larger card images retain their original proportions and transparent surrounding areas.
 
 Checkout destinations were verified from website markup only. No Payhip account actions or purchases were performed for these corrections. No physical-device test, purchase/download test, Lighthouse score, or field Web Vitals measurement is claimed.
