@@ -103,3 +103,21 @@ body.pingr-page {
     background: radial-gradient(circle at 50% 12%,rgba(57,205,139,.1),transparent 28%),#0d191e !important;
   }
 }
+
+/* Green identifies PingR; navy keeps the page in the Lonware palette. */
+body.pingr-page{--pg:#83c9aa;--pgl:#addcc8;--pl:rgba(131,201,170,.24);background:#071321!important}
+.pingr-page .navbar,.pingr-page .footer{background-color:#081524!important}
+.pingr-page .pingr-hero h1 span{color:var(--pg);text-shadow:none}
+.pingr-page .pingr-eyebrow i{background:var(--pg);box-shadow:none}
+.pingr-page .pingr-proof span{border-color:#3c5964;background:#101f2c;color:#d2e0e4}
+.pingr-page .pingr-vpn{border-color:#476575;background:linear-gradient(130deg,#18303b,#0e1f2d);box-shadow:inset 0 1px #d2eee012,0 18px 38px #0003}
+.pingr-page .pingr-plan,.pingr-page .pingr-plan-featured{background:linear-gradient(145deg,#182b3a,#0d1c2b);border-color:#516b7c;box-shadow:inset 0 1px #d2eee012,0 12px 30px #0003}
+.pingr-page .pingr-plan-featured{border-top-color:#8db6a8}
+.pingr-page .pingr-button-primary{background:linear-gradient(#acd9c4,#80b79e);border-color:#b4dccb;color:#10291f;box-shadow:inset 0 1px #ffffff40,0 3px 8px #0004}
+.pingr-page .pingr-button-primary:hover{background:#b8dfcd;filter:none;transform:none}
+.pingr-page .pingr-button-secondary{background:#172d3e;border-color:#537082;box-shadow:none}
+.pingr-page .pingr-showcase li:before{background:#83c9aa;border:0;box-shadow:none}
+.pingr-page .pingr-eyebrow,.pingr-page .pingr-kicker{letter-spacing:.8px}
+.pingr-page .pingr-button:focus-visible{outline:2px solid #b8dfcd;outline-offset:4px}
+.pingr-page .pingr-button{cursor:pointer}
+@media(prefers-reduced-motion:reduce){.pingr-page *{animation:none!important;transition:none!important}}

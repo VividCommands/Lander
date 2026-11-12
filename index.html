@@ -20,7 +20,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Lonware","url":"https://lonware.com/","logo":"https://lonware.com/favicon.png","sameAs":["https://discord.gg/KVVjrawxE5"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Lonware","url":"https://lonware.com/","description":"Windows PC optimization and gaming tools for performance, macros, latency, and aim tuning."}</script>
 <link rel="stylesheet" href="styles.css?v=dark24" />
-<link rel="stylesheet" href="custom.css?v=dark24" />
+<link rel="stylesheet" href="custom.css?v=product-polish3" />
 <link rel="stylesheet" href="home-fixes.css?v=11" />
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="favicon.png">
@@ -29,6 +29,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>.pingr-orbit-visual{background:transparent!important}</style>
+<link rel="stylesheet" href="macro-home.css?v=3">
+<link rel="stylesheet" href="product-polish.css?v=3">
 </head>
 <body>
 <div class="announcement-bar">
@@ -65,24 +67,25 @@ Use code <strong>UPD!</strong> for 12% off
   <div class="orbit-stage">
     <article class="orbit-product is-front" data-product-index="0">
       <div class="orbit-visual" aria-label="Macro.io screenshots">
-        <img src="img/macro-lifetime-screenshot-hq.png" alt="Macro.io main interface" class="orbit-shot is-current" / loading="eager" decoding="async" fetchpriority="high">
-        <img src="img/macro-controller-screenshot-hq.png" alt="Macro.io controller setup" class="orbit-shot" / loading="lazy" decoding="async">
-        <img src="img/macro-spam-screenshot-hq.png" alt="Macro.io edit controls" class="orbit-shot" / loading="lazy" decoding="async">
-        <img src="img/macro-lite-screenshot-hq.png" alt="Macro.io Lite interface" class="orbit-shot" / loading="lazy" decoding="async">
+        <span class="orbit-edition is-pro">Pro</span>
+        <img src="img/macro/pro-workspace.webp" data-tier="Pro" alt="Macro.io Pro with Macro IQ and app menu" class="orbit-shot macro-workspace-image is-current" width="986" height="414" loading="eager" decoding="async" fetchpriority="high">
+        <img src="img/macro/standard-drag.webp" data-tier="Standard" alt="Macro.io Standard Drag Edit" class="orbit-shot macro-single-image" width="440" height="320" loading="lazy" decoding="async">
+        <img src="img/macro/pro-controller.webp" data-tier="Pro" alt="Macro.io Pro controller settings" class="orbit-shot macro-single-image" width="440" height="320" loading="lazy" decoding="async">
+        <img src="img/macro/pro-build.webp" data-tier="Pro" alt="Macro.io Pro Turbo Auto Build" class="orbit-shot macro-single-image" width="440" height="320" loading="lazy" decoding="async">
       </div>
       <div class="orbit-copy"><h2>Macro.io</h2><div class="lineup-chips"><span>Keyboard + controller</span><span>Custom timing</span><span>Saved configs</span></div><a href="macro.html" class="package-button">Explore Macro.io</a></div>
     </article>
     <article class="orbit-product is-behind" data-product-index="1">
       <div class="orbit-visual" aria-label="PC Optimizations screenshots">
-        <img src="optii-cover-quality-v2.webp" alt="Optii PC health dashboard" class="orbit-shot is-current" / loading="lazy" decoding="async">
-        <img src="optii-expanded-quality-v2.webp" alt="Optii diagnostics and optimization controls" class="orbit-shot" / loading="lazy" decoding="async">
+        <img src="optii-cover-quality-v2.webp" alt="Optii PC health dashboard" class="orbit-shot is-current" width="1561" height="1007" loading="lazy" decoding="async">
+        <img src="optii-expanded-quality-v2.webp" alt="Optii diagnostics and optimization controls" class="orbit-shot" width="1609" height="860" loading="lazy" decoding="async">
       </div>
       <div class="orbit-copy"><h2>Optii</h2><div class="lineup-chips"><span>Live diagnostics</span><span>Practical modules</span><span>Restore points</span></div><a href="pc.html" class="package-button">Explore Optii</a></div>
     </article>
     <article class="orbit-product is-behind" data-product-index="2">
       <div class="orbit-visual pingr-orbit-visual" aria-label="PingR screenshots">
-        <img src="img/pingr/pingr-dashboard-transparent-v4.png?v=5" alt="PingR live latency dashboard" class="orbit-shot is-current" loading="lazy" decoding="async">
-        <img src="img/pingr/pingr-game-library-transparent-v4.png" alt="PingR game library and region controls" class="orbit-shot" loading="lazy" decoding="async">
+        <img src="img/pingr/pingr-dashboard-hq.webp" alt="PingR live latency dashboard" class="orbit-shot is-current" width="1740" height="1362" loading="lazy" decoding="async">
+        <img src="img/pingr/pingr-game-library-transparent-v4.png" alt="PingR game library and region controls" class="orbit-shot" width="1566" height="1005" loading="lazy" decoding="async">
       </div>
       <div class="orbit-copy"><h2>Ping<span style="color:#45e79a">R</span></h2><div class="lineup-chips"><span>Game boosting</span><span>Live ping</span><span>VPN</span></div><a href="ping.html" class="package-button">Explore PingR</a></div>
     </article>
@@ -90,6 +93,7 @@ Use code <strong>UPD!</strong> for 12% off
   <button class="orbit-arrow orbit-prev" type="button" aria-label="Bring previous product forward">&#8592;</button>
   <button class="orbit-arrow orbit-next" type="button" aria-label="Bring next product forward">&#8594;</button>
   <div class="orbit-controls" aria-label="Choose a featured product"></div>
+  <button class="orbit-pause" type="button" aria-label="Pause product carousel">Pause</button>
 </div>
 <div class="product-grid product-grid-5" id="product-grid">
 <a href="pc.html" class="product-card-link">
@@ -243,7 +247,7 @@ Use code <strong>UPD!</strong> for 12% off
 </div>
 <p class="copyright">&copy; 2026 Lonware. All rights reserved.</p>
 </footer>
-<script src="script.js?v=nav22"></script>
+<script src="script.js?v=product-polish3"></script>
 </body>
 </html>
 

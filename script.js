@@ -77,6 +77,7 @@ if (menuToggle && navLinks) {
 
 /* Particle background */
 (function initParticles() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || document.body.matches('.pingr-page,.macro-page')) return;
   const canvas = document.createElement('canvas');
   canvas.id = 'particle-canvas';
   canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;touch-action:none;z-index:0;';
@@ -134,13 +135,23 @@ if (orbit) {
   const controls = orbit.querySelector('.orbit-controls');
   let activeProduct = 0;
   let orbitTimer;
+  let shotTimer;
+  const orbitMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let orbitPaused = orbitMotion.matches;
+  let orbitHovered = false;
+  let orbitFocused = false;
+  const pauseOrbit = orbit.querySelector('.orbit-pause');
 
   products.forEach((product, index) => {
     product.dataset.shot = '0';
+    product.inert = index !== activeProduct;
+    product.setAttribute('aria-hidden', String(index !== activeProduct));
+    product.querySelectorAll('.orbit-shot').forEach((shot,i) => shot.setAttribute('aria-hidden', String(i !== 0)));
     const dot = document.createElement('button');
     dot.type = 'button';
     dot.className = 'orbit-dot' + (index === 0 ? ' is-current' : '');
     dot.setAttribute('aria-label', 'Bring ' + product.querySelector('h2').textContent + ' forward');
+    if (index === activeProduct) dot.setAttribute('aria-current', 'true');
     dot.addEventListener('click', () => { rotateProducts(index, index < activeProduct ? -1 : 1); restartOrbit(); });
     controls.appendChild(dot);
   });
@@ -157,7 +168,12 @@ if (orbit) {
       incoming.className = 'orbit-product is-front';
     }));
     activeProduct = next;
-    controls.querySelectorAll('.orbit-dot').forEach((dot, i) => dot.classList.toggle('is-current', i === activeProduct));
+    products.forEach((product,i) => { product.inert = i !== activeProduct; product.setAttribute('aria-hidden', String(i !== activeProduct)); });
+    controls.querySelectorAll('.orbit-dot').forEach((dot, i) => {
+      dot.classList.toggle('is-current', i === activeProduct);
+      if (i === activeProduct) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
   }
 
   function advanceShots() {
@@ -165,21 +181,32 @@ if (orbit) {
       const shots = [...product.querySelectorAll('.orbit-shot')];
       if (shots.length < 2) return;
       const next = (Number(product.dataset.shot) + 1) % shots.length;
-      shots.forEach((shot, i) => shot.classList.toggle('is-current', i === next));
+      shots.forEach((shot, i) => { shot.classList.toggle('is-current', i === next); shot.setAttribute('aria-hidden', String(i !== next)); });
       product.dataset.shot = String(next);
+      const edition = product.querySelector('.orbit-edition');
+      if (edition) { edition.textContent = shots[next].dataset.tier; edition.classList.toggle('is-pro', shots[next].dataset.tier === 'Pro'); }
     });
   }
 
   function restartOrbit() {
     clearInterval(orbitTimer);
+    clearInterval(shotTimer);
+    if (pauseOrbit) { pauseOrbit.textContent = orbitPaused ? 'Play' : 'Pause'; pauseOrbit.setAttribute('aria-label', orbitPaused ? 'Play product carousel' : 'Pause product carousel'); }
+    if (orbitPaused || orbitHovered || orbitFocused || document.hidden) return;
     orbitTimer = setInterval(() => rotateProducts(activeProduct + 1, 1), 7000);
+    shotTimer = setInterval(advanceShots, 3500);
   }
 
   orbit.querySelector('.orbit-prev').addEventListener('click', () => { rotateProducts(activeProduct - 1, -1); restartOrbit(); });
   orbit.querySelector('.orbit-next').addEventListener('click', () => { rotateProducts(activeProduct + 1, 1); restartOrbit(); });
-  orbit.addEventListener('mouseenter', () => clearInterval(orbitTimer));
-  orbit.addEventListener('mouseleave', restartOrbit);
-  setInterval(advanceShots, 2600);
+  orbit.addEventListener('mouseenter', () => { orbitHovered = true; restartOrbit(); });
+  orbit.addEventListener('focusin', () => { orbitFocused = true; restartOrbit(); });
+  orbit.addEventListener('focusout', event => { orbitFocused = orbit.contains(event.relatedTarget); restartOrbit(); });
+  document.addEventListener('visibilitychange', restartOrbit);
+  if (pauseOrbit) pauseOrbit.addEventListener('click', () => { orbitPaused = !orbitPaused; restartOrbit(); });
+  orbit.addEventListener('mouseleave', () => { orbitHovered = false; restartOrbit(); });
+  orbitMotion.addEventListener('change', () => { orbitPaused = orbitMotion.matches; restartOrbit(); });
+
   restartOrbit();
 }
 
@@ -215,7 +242,7 @@ showSlide(0);
 
 /* Scroll reveal */
 const revealSelectors = 'section:not(.hero),.product-card,.package-card,.stat-item,.benefit-item,.testimonials-section,.purchase-feed-section,.metric,footer';
-const revealEls = document.querySelectorAll(revealSelectors);
+const revealEls = document.body.matches('.macro-page,.optii-page,.pingr-page') || matchMedia('(prefers-reduced-motion: reduce)').matches ? [] : document.querySelectorAll(revealSelectors);
 if (revealEls.length) {
   revealEls.forEach(el=>{if(!el.closest('.hero'))el.classList.add('reveal-hidden');});
   requestAnimationFrame(()=>{requestAnimationFrame(()=>{
