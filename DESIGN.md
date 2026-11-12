@@ -1,15 +1,21 @@
-# Macro.io and PingR update direction
+# Lonware product update direction
 
-Source: the owner's November 11 brief and supplied Standard/Pro screenshots.
+Source: the owner's November 11 website brief, follow-up design corrections, and supplied Standard/Pro screenshots. The owner has cancelled website key verification and the upgrade-link flow. Only the existing direct Standard and Pro checkout links remain.
 
-Keep Lonware's dark blue canvas and existing Rajdhani/Montserrat typography. Standard appears before Pro. Pro borrows the former Lite card's warm outline and colored edition name, with neutral feature copy. Screenshots provide the visual identity; no invented product imagery, metrics, testimonials, or feature icons.
+Keep Lonware's navy identity and Rajdhani/Montserrat typography: Rajdhani carries product titles and pricing; Montserrat keeps the feature copy readable. The owner explicitly wants refinement, depth, restrained outlines, and compact spacing, not flat panels or tall playing-card layouts.
 
-The owner's follow-up rejects flat, oversized panels. Restore the original page's outlined surfaces and compact proportions: directional top-edge highlights, recessed screenshot frames, restrained inset shadows, and layered blue/gold buttons. Montserrat carries purchase copy as on the original cards; Rajdhani remains on product names and prices. Cards follow their content height instead of adding blank filler to force equal bottoms. The Pro card shows the central purchase differences first; its native More Pro features disclosure preserves the other verified features without turning the default view into a long feature wall. Gallery controls share one compact surface because they act on the same screenshot.
+Macro uses an open split composition so the real application has room beside its introduction. The new Pro screenshot shows the actual IQ and menu windows. Phone layouts use the existing single-window Pro screenshot so timing controls remain legible. Screenshot labels always match the edition shown. Rotation is optional, pauses during interaction, and starts paused for reduced-motion users.
 
-Energy 2 / Rhythm 2 / Motion 2. Screenshot rotation helps compare the two real editions. Visible controls pause it; reduced-motion users start with rotation paused. The screenshot's edition label updates with the actual image. Two purchase cards represent the two products, rather than a template of three plans.
+The two real editions share a purchase surface, making their prices and feature differences easy to compare without repeating screenshots in tall separate cards. Standard appears first. Blue identifies Standard; a warm top edge and edition name identify Pro. Most copy stays neutral. Edge highlights and recessed shadows distinguish the purchase surface from the page; short blue and warm buttons have visible hover, active, and keyboard-focus states.
 
-The modal keeps the visitor on the page. Per the owner's follow-up, its resting state is one compact row: Enter key, Submit, and a close control. It has no visible heading, repeated question, explanation, eligibility paragraph, or reserved status space. Accessible names remain available to screen readers. The submit button shows progress; errors and the verified checkout link appear only when needed. Backdrop blur separates the verification task from purchase choices. Focus stays in the native dialog and returns to its trigger on close. Warm Pro accents distinguish advanced access without using yellow feature paragraphs or heavy ambient glow.
+The navy canvas is the established brand rather than a generic dark-mode default. A subtle vertical luminance change separates the open hero from the purchase area. Macro and PingR omit animated particles so product imagery holds attention. No new decorative icons, generic feature cards, invented metrics, or testimonials are added.
 
-PingR keeps the existing layout. Navy connects it to Lonware; muted green identifies product-specific headings and purchase actions. Existing clean product imagery replaces the dashboard asset with corner artifacts. Green/blue background gradients, glowing bullets, and animated cyan particles are removed on this page.
+The gallery arrows navigate screenshots; the single down arrow on the edition link indicates an in-page scroll. Touch targets remain at least 44px, including the carousel selector hit areas.
 
-Purchase wording: Standard $15 once; Pro $24.99 first month; $9.99 for subsequent monthly renewals. Do not imply automatic payment collection without verified billing configuration. Standard remains after Pro expiration. Elevator 90s is described as keyboard only.
+Optii's expanded screenshot keeps its original pixels. An SVG mask follows the exact bounds of its four app windows, removing only the external black canvas. The same treatment appears in the home carousel. The showcase heading is reduced to balance the screenshot and avoid awkward line breaks.
+
+PingR retains its existing structure. Muted green marks product-specific details against Lonware navy. Clean existing dashboard artwork replaces the corner-artifact image. Directional highlights and restrained shadows restore depth without layering green and blue glows.
+
+Pricing: Standard Lifetime $15 once; Pro $24.99 first month and $9.99 per monthly renewal. Do not describe renewals as automatic billing. Pro includes Standard access after expiry. Only the two direct Payhip purchase destinations are presented; renewal access is handled outside this website as requested.
+
+Energy 2 / Rhythm 2 / Motion 2. Spacing follows the content: open application showcase, compact purchase comparison, and quieter terms. The Anti-Slop core was reviewed as a filter while preserving the owner's chosen identity.

@@ -48,6 +48,7 @@ section, header, footer, main, article, aside,
 }
 
 /* -- TYPOGRAPHY -- */
+body .navbar:not(.scrolled){top:var(--announcement-height,38px)!important}
 body {
   font-family: 'Rajdhani', 'Montserrat', sans-serif !important;
   font-weight: 500;
