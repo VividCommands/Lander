@@ -53,3 +53,12 @@ Scope: Macro presentation, complete screenshot galleries, home Macro imagery, an
 - No feature wording, values, image sizing, hover treatment, other pages, JavaScript or checkout destinations changed in this alignment refinement. The inspected Macro console showed no application errors.
 
 Checkout destinations were verified from website markup only. No Payhip account actions or purchases were performed for these corrections. No physical-device test, purchase/download test, Lighthouse score, or field Web Vitals measurement is claimed.
+
+## Home destination, PingR clarity and faster galleries
+
+- View Products and the downward indicator share the featured-products anchor. At the 1348 by 926 desktop viewport, the showcase starts at about 80px, the four-card grid begins at 542px and ends at 912px. Macro.io is the active product at arrival. The full row is visible beneath the showcase after the navigation settles.
+- After leaving Home at its hero, Macro.io remains first while the showcase is offscreen. Selecting PingR and then activating View Products with Enter returns Macro.io to the front. Existing product selection and automatic rotation still operate.
+- Home at 320px, 375px and 768px iframe widths has matching client/scroll widths of 305px, 360px and 753px. The anchor starts at about 80px, the product grid at about 590px, and Macro's full image, text and action fit above the carousel controls.
+- PingR loads the existing 1419 by 1108 transparent PNG at the same 720px desktop display width. The restored text and controls are visibly clearer than the former WebP. A small corner clip removes the exterior bottom-left specks. At 375px the image loads within its container and the document has matching 360px client/scroll widths.
+- Macro intervals are 3200ms for the hero and 4200ms for both purchase cards. Browser observation confirmed that all three advance automatically to different loaded screenshots. Their image catalogs and hold-to-pause behavior are unchanged.
+- JavaScript syntax and Git whitespace checks pass. This update changes no purchase values, direct checkout destinations, Payhip settings or original image bytes.
