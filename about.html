@@ -60,10 +60,7 @@
 .about-tile p{font-size:.78rem;color:rgba(255,255,255,.45);margin:0;letter-spacing:1px;text-transform:uppercase;font-weight:700;}
 .tile-arrow{position:absolute;top:1.75rem;right:1.75rem;color:rgba(0,229,255,.3);font-size:1.1rem;transition:color .25s,transform .25s;}
 .about-tile:hover .tile-arrow{color:#00e5ff;transform:translate(3px,-3px);}
-.about-discord-block{background:rgba(0,15,40,.5);border:1px solid rgba(0,229,255,.1);border-radius:20px;padding:2.5rem;text-align:center;margin-top:1.25rem;}
-.about-discord-block h2{font-family:'Rajdhani',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#fff;margin:0 0 .75rem;}
-.about-discord-block p{color:rgba(255,255,255,.5);font-size:.95rem;margin:0 auto 1.5rem;max-width:420px;}
-.page-wrap{max-width:960px;margin:0 auto;padding:0 2rem 5rem;}
+.page-wrap{max-width:960px;margin:0 auto;padding:0 2rem 3rem;}
 .stat-row{display:flex;gap:1.5rem;margin-top:2rem;flex-wrap:wrap;}
 .stat-item{text-align:center;}
 .stat-item .num{font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;color:#00e5ff;line-height:1;}
@@ -71,15 +68,15 @@
 /* Mobile About refinement */
 @media(max-width:768px){
   .about-hero-wrap{padding:3.5rem 1rem 2.25rem;}
-  .page-wrap{padding:0 1rem 4rem;}
-  .about-story-block,.about-values-block,.about-discord-block{padding:1.5rem;border-radius:16px;}
+  .page-wrap{padding:0 1rem 2.5rem;}
+  .about-story-block,.about-values-block{padding:1.5rem;border-radius:16px;}
   .about-tile{padding:1.5rem;border-radius:16px;min-height:132px;}
   .stat-row{justify-content:center;gap:1.25rem;}
 }
 @media(max-width:430px){
   .about-hero-wrap{padding-top:3rem;}
   .about-hero-sub{font-size:.88rem;}
-  .about-story-block,.about-values-block,.about-discord-block{padding:1.25rem;}
+  .about-story-block,.about-values-block{padding:1.25rem;}
   .value-item{gap:.85rem;}
   .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;width:100%;}
   .stat-item .num{font-size:1.5rem;}
@@ -97,7 +94,7 @@
 <a href="about.html" class="active">About</a>
 <a href="contact.html">Contact</a>
 </nav>
-<a href="https://discord.gg/KVVjrawxE5" class="nav-discord-btn" target="_blank" rel="noopener" aria-label="Join our Discord"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>Discord</a>
+<a href="https://discord.gg/KVVjrawxE5" class="nav-discord-btn" target="_blank" rel="noopener" aria-label="Join our Discord"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079-.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>Discord</a>
 </header>
 
 <div class="about-hero-wrap">
@@ -170,11 +167,7 @@
     </a>
   </div>
 
-  <div class="about-discord-block">
-    <h2>Join 2,500+ Players</h2>
-    <p>Get support, share configs, and stay ahead of every update inside our community.</p>
-    <a href="https://discord.gg/KVVjrawxE5" class="discord-cta-btn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>Join the Discord</a>
-  </div>
+
 </div>
 
 <footer class="footer">
@@ -183,7 +176,7 @@
 <div class="footer-brand">
 <div class="footer-logo">Lonware</div>
 <p class="footer-tagline">Tools that make your setup easier to own.</p>
-<a href="https://discord.gg/KVVjrawxE5" class="footer-discord-btn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>Join Discord</a>
+<a href="https://discord.gg/KVVjrawxE5" class="footer-discord-btn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079-.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>Join Discord</a>
 </div>
 <div class="footer-nav-cols">
 <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="packages.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
@@ -196,4 +189,3 @@
 <script src="script.js?v=nav22"></script>
 </body>
 </html>
-
